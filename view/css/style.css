@@ -1,0 +1,351 @@
+@font-face {
+  src: url("../fonts/Oswald-Regular.ttf");
+  font-family: "Oswald";
+  font-weight: normal; }
+@font-face {
+  src: url("../fonts/Oswald-Bold.ttf");
+  font-family: "Oswald";
+  font-weight: bold; }
+@font-face {
+  src: url("../fonts/Oswald-Light.ttf");
+  font-family: "Oswald";
+  font-weight: 200; }
+body {
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  color: #303030;
+  background-color: #2d2d2a; }
+
+.flexRow,
+.flexColumn {
+  display: flex; }
+
+.flexRow {
+  flex-direction: row; }
+
+.flexColumn {
+  flex-direction: column; }
+
+.flex1 {
+  flex: 1; }
+
+.flexWrap {
+  flex-wrap: wrap; }
+
+.justifyCenter, .perfectCenter {
+  justify-content: center; }
+
+.justifySpaceAround {
+  justify-content: space-around; }
+
+.alignItemsCenter, .perfectCenter {
+  align-items: center; }
+
+.flexBasis80 {
+  flex-basis: 80%; }
+
+.flexBasis100 {
+  flex-basis: 100%; }
+
+.mainSection {
+  height: 100vh;
+  padding-bottom: 80px; }
+
+li {
+  list-style-type: none; }
+
+header {
+  position: fixed;
+  width: 100%;
+  background-color: #2d2d2a;
+  background-size: cover;
+  z-index: 10;
+  box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49);
+  transition: all 0.3s ease-in-out; }
+  header .title {
+    text-align: center;
+    color: white;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 7px; }
+    header .title strong {
+      color: #ff5953;
+      font-weight: normal;
+      font-size: 0.55em;
+      margin-top: 4px;
+      margin-bottom: 10px; }
+  header nav li {
+    margin-right: 15px; }
+    header nav li a {
+      position: relative;
+      color: white;
+      transition: all 0.2s ease-in-out;
+      z-index: 10; }
+      header nav li a:hover {
+        color: #ff5953;
+        text-decoration: none; }
+      header nav li a:focus {
+        color: white;
+        outline: none;
+        text-decoration: none; }
+      header nav li a:before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: #75ffba;
+        bottom: -2px;
+        transition: all 0.4s ease-in-out;
+        transform: scale(0); }
+    header nav li .activeLink {
+      color: #ff5953; }
+      header nav li .activeLink:before {
+        transform: scale(1); }
+      header nav li .activeLink:focus {
+        color: #ff5953; }
+
+.home {
+  background-color: #75ffba;
+  height: 100vh; }
+  .home div {
+    background-color: white;
+    width: 800px;
+    height: 500px;
+    margin: 10% auto 0 auto;
+    box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49); }
+
+.latestWork {
+  background-color: #eeeeee;
+  font-weight: bold;
+  height: calc(100vh + 160px);
+  padding: 80px 0; }
+
+.work {
+  display: none;
+  position: relative;
+  margin: 0 1% 5% 1%;
+  width: 330px;
+  color: white;
+  background-color: #2d2d2a;
+  box-shadow: 0px 5px 5px rgba(100, 100, 100, 0.49); }
+
+.workInfo {
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(45, 45, 42, 0.965);
+  display: none;
+  width: 100%;
+  height: 100%;
+  padding: 0 3px;
+  cursor: pointer; }
+  .workInfo h2 {
+    text-align: center;
+    margin: 35px 0 20px 0;
+    color: #ff5953;
+    font-size: 1.2em; }
+  .workInfo li {
+    margin-top: 4px;
+    margin-right: 7%;
+    font-size: 0.96em;
+    letter-spacing: 1px;
+    font-weight: normal; }
+    .workInfo li span {
+      font-size: 0.96em;
+      color: #75ffba; }
+
+.skills {
+  background-color: #75ffba; }
+  .skills h1 {
+    color: #2d2d2a;
+    display: none; }
+  .skills div {
+    display: none;
+    box-shadow: 0px 7px 7px rgba(100, 100, 100, 0.49);
+    padding: 35px 0;
+    background-color: white;
+    color: #ff5953;
+    height: 500px; }
+    .skills div:last-child {
+      background-color: #eeeeee; }
+    .skills div ul {
+      margin-left: 25%;
+      margin-top: 20px; }
+      .skills div ul li p {
+        margin-top: 7px;
+        color: white;
+        text-align: center; }
+
+.aboutMe {
+  background-color: #75ffba; }
+  .aboutMe section {
+    display: none;
+    height: 500px;
+    background-color: #2d2d2a;
+    margin-right: 15px;
+    box-shadow: 0px 7px 7px rgba(100, 100, 100, 0.49); }
+    .aboutMe section h3 {
+      color: #ff5953;
+      text-align: center;
+      font-size: 1.9em;
+      margin-bottom: 35px; }
+  .aboutMe .firstSectionAboutMe {
+    width: 550px;
+    padding: 35px 65px; }
+  .aboutMe .lastChildSectionAboutMe {
+    background-color: white;
+    width: 400px;
+    padding: 35px 45px; }
+
+.liTitle {
+  list-style: square;
+  margin-bottom: 25px;
+  color: #75ffba; }
+  .liTitle ul {
+    margin-top: 10px; }
+  .liTitle li {
+    list-style: initial;
+    color: white;
+    font-size: 0.95em; }
+
+.contact {
+  background-color: white; }
+  .contact .blackContainer {
+    position: relative;
+    background-color: #2d2d2a;
+    width: 500px;
+    height: 500px;
+    box-shadow: 0px 7px 7px rgba(100, 100, 100, 0.49); }
+  .contact .formContainer {
+    overflow: visible !important;
+    position: absolute;
+    background-color: #75ffba;
+    top: 40px;
+    left: -40px;
+    width: 4px;
+    height: 420px;
+    z-index: 2; }
+  .contact h3 {
+    display: none; }
+  .contact .closeFormContainer {
+    display: none;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    right: -30px;
+    top: 16px; }
+  .contact .closeFormContainer::before, .contact .closeFormContainer::after {
+    content: "";
+    position: absolute;
+    background-color: #ed6a5a;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both; }
+  .contact .closeFormContainer::before {
+    height: 4px;
+    width: 20px;
+    animation-name: retour1; }
+  .contact .closeFormContainer::after {
+    animation-name: retour2;
+    height: 20px;
+    width: 4px; }
+  .contact .changeBar::before {
+    animation-name: rotate1; }
+  .contact .changeBar::after {
+    animation-name: rotate2; }
+  .contact .buttonCloseForm {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    left: 15px;
+    cursor: default; }
+  .contact .form {
+    width: 300px;
+    display: none;
+    padding: 0 30px; }
+  .contact input {
+    margin-top: 15px;
+    width: 250px; }
+  .contact textarea {
+    margin-top: 15px;
+    width: 250px;
+    height: 100px;
+    resize: none;
+    font-size: 0.98em; }
+  .contact .submit {
+    display: none;
+    background-color: #2d2d2a;
+    border: none;
+    color: white;
+    height: 40px;
+    width: 100px;
+    margin-top: 15px; }
+  .contact .contactContainer {
+    background-color: #ff5953;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 260px;
+    top: 260px;
+    color: white;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 35px; }
+    .contact .contactContainer p {
+      display: none; }
+    .contact .contactContainer a {
+      display: none;
+      color: white; }
+
+@keyframes retour1 {
+  0% {
+    transform: rotate(45deg);
+    left: 20px;
+    top: 28px;
+    background-color: black; }
+  100% {
+    transform: rotate(-180deg);
+    left: 0;
+    top: 0;
+    background-color: #ff5953; } }
+@keyframes retour2 {
+  0% {
+    transform: rotate(45deg);
+    right: 28px;
+    bottom: 20px;
+    background-color: black; }
+  100% {
+    transform: rotate(360deg);
+    right: 0;
+    bottom: 0;
+    background-color: #ff5953; } }
+@keyframes rotate1 {
+  0% {
+    transform: rotate(0deg);
+    left: 0;
+    top: 0;
+    background-color: #ed6a5a; }
+  100% {
+    transform: rotate(135deg);
+    left: 20px;
+    top: 28px;
+    background-color: black; } }
+@keyframes rotate2 {
+  0% {
+    transform: rotate(0deg);
+    right: 0;
+    bottom: 0;
+    background-color: #ed6a5a; }
+  100% {
+    transform: rotate(135deg);
+    right: 28px;
+    bottom: 20px;
+    background-color: black; } }
+footer {
+  height: 100px; }
+
+/*# sourceMappingURL=style.css.map */

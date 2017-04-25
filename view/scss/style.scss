@@ -1,0 +1,433 @@
+@font-face {
+  src: url("../fonts/Oswald-Regular.ttf");
+  font-family: "Oswald";
+  font-weight: normal;
+}
+
+@font-face {
+  src: url("../fonts/Oswald-Bold.ttf");
+  font-family: "Oswald";
+  font-weight: bold;
+}
+
+@font-face {
+  src: url("../fonts/Oswald-Light.ttf");
+  font-family: "Oswald";
+  font-weight: 200;
+}
+
+$lightGrey: #eeeeee;
+$pink: #ff5953;
+$lagoon: #75ffba;
+$white: white;
+$black: #2d2d2a;
+$darkGrey: #333333;
+$orange : $lagoon;
+
+body {
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  color: #303030;
+  background-color: $black;
+}
+
+.flexRow,
+.flexColumn {
+  display: flex;
+}
+
+.flexRow {
+  flex-direction: row;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.flexWrap {
+  flex-wrap: wrap;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.justifySpaceAround {
+  justify-content: space-around;
+}
+
+.alignItemsCenter {
+  align-items: center;
+}
+
+.flexBasis80 {
+  flex-basis: 80%;
+}
+
+.flexBasis100 {
+  flex-basis: 100%;
+}
+
+.perfectCenter {
+  @extend .justifyCenter;
+  @extend .alignItemsCenter;
+}
+
+.mainSection {
+  height: 100vh;
+  padding-bottom: 80px;
+}
+
+li {
+  list-style-type: none;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  background-color: $black;
+  background-size: cover;
+  z-index: 10;
+  box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49);
+  transition: all 0.3s ease-in-out;
+  .title {
+    text-align: center;
+    color: $white;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 7px;
+    strong {
+      color: $pink;
+      font-weight: normal;
+      font-size: 0.55em;
+      margin-top: 4px;
+      margin-bottom: 10px;
+    }
+  }
+  nav {
+    li {
+      margin-right: 15px;
+      a {
+        position: relative;
+        color: $white;
+        transition: all 0.2s ease-in-out;
+        z-index: 10;
+        &:hover {
+          color: $pink;
+          text-decoration: none;
+        }
+        &:focus {
+          color: $white;
+          outline: none;
+          text-decoration: none;
+        }
+        &:before {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 2px;
+          background-color: $lagoon;
+          bottom : -2px;
+          transition: all 0.4s ease-in-out;
+          transform: scale(0);
+        }
+      }
+      .activeLink {
+        color: $pink;
+        &:before {
+          transform: scale(1);
+        }
+        &:focus {
+          color: $pink;
+        }
+      }
+    }
+  }
+}
+
+.home {
+  background-color: $lagoon;
+  height: 100vh;
+  div {
+    background-color: $white;
+    width: 800px;
+    height: 500px;
+    margin: 10% auto 0 auto;
+    box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49);
+  }
+}
+
+.latestWork {
+  background-color: $lightGrey;
+  font-weight: bold;
+  height: calc(100vh + 160px);
+  padding: 80px 0;
+}
+
+.work {
+  display: none;
+  position: relative;
+  margin: 0 1% 5% 1%;
+  width: 330px;
+  color: $white;
+  background-color: $black;
+  box-shadow: 0px 5px 5px rgba(100, 100, 100, 0.49);
+}
+
+.workInfo {
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(45,45,42, 0.965);
+  display: none;
+  width: 100%;
+  height: 100%;
+  padding: 0 3px;
+  cursor: pointer;
+  h2 {
+    text-align: center;
+    margin: 35px 0 20px 0;
+    color: $pink;
+    font-size: 1.2em;
+  }
+  li {
+    margin-top: 4px;
+    margin-right: 7%;
+    font-size: 0.96em;
+    letter-spacing: 1px;
+    font-weight: normal;
+    span {
+      font-size: 0.96em;
+      color: $lagoon;
+    }
+  }
+}
+
+
+
+.skills {
+  background-color: $lagoon;
+  h1 {
+    color: $black;
+    display: none;
+  }
+  div {
+      display: none;
+      box-shadow: 0px 7px 7px rgba(100, 100, 100, 0.49);
+      padding: 35px 0;
+      background-color: $white;
+      color: $pink;
+      height: 500px;
+      &:last-child {
+      background-color: $lightGrey;
+    }
+    ul {
+      margin-left: 25%;
+      margin-top: 20px;
+      li {
+        p {
+          margin-top: 7px;
+          color: $white;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+
+.aboutMe {
+  background-color: $lagoon;
+  section {
+    display: none;
+    height: 500px;
+    background-color: $black;
+    margin-right: 15px;
+    box-shadow: 0px 7px 7px rgba(100, 100, 100, 0.49);
+    h3 {
+      color: $pink;
+      text-align: center;
+      font-size: 1.9em;
+      margin-bottom: 35px;
+    }
+  }
+  .firstSectionAboutMe {
+    width: 550px;
+    padding: 35px 65px;
+  }
+  .lastChildSectionAboutMe {
+    background-color: $white;
+    width: 400px;
+    padding: 35px 45px;
+  }
+}
+
+.liTitle {
+  list-style: square;
+  margin-bottom: 25px;
+  color: $lagoon;
+  ul {
+    margin-top: 10px;
+  }
+  li {
+    list-style: initial;
+    color: $white;
+    font-size: 0.95em;
+  }
+}
+
+.contact {
+  background-color: $white;
+  .blackContainer {
+    position: relative;
+    background-color: $black;
+    width: 500px;
+    height: 500px;
+    box-shadow: 0px 7px 7px rgba(100, 100, 100, 0.49);
+  }
+
+  .formContainer {
+    overflow: visible !important;
+    position:absolute;
+    background-color: $lagoon;
+    top: 40px;
+    left: -40px;
+    width: 4px;
+    height: 420px;
+    z-index: 2;
+  }
+
+  h3 {
+    display: none;
+  }
+
+  //animation des bars de la fermeture du formulaire
+
+  .closeFormContainer {
+    display: none;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: $white;
+    right: -30px;
+    top: 16px;
+  }
+
+  .closeFormContainer::before, .closeFormContainer::after {
+    content: "";
+    position: absolute;
+    background-color: #ed6a5a;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+  }
+
+  .closeFormContainer::before {
+    height: 4px;
+    width : 20px;
+    animation-name: retour1;
+  }
+
+  .closeFormContainer::after {
+    animation-name: retour2;
+    height: 20px;
+    width : 4px;
+  }
+
+  .changeBar::before {
+    animation-name: rotate1;
+  }
+
+  .changeBar::after {
+    animation-name: rotate2;
+  }
+
+  .buttonCloseForm {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    left: 15px;
+    cursor: default;
+  }
+
+  .form {
+    width: 300px;
+    display: none;
+    padding: 0 30px;
+  }
+
+  input {
+    margin-top: 15px;
+    width: 250px;
+  }
+
+  textarea {
+    margin-top: 15px;
+    width: 250px;
+    height: 100px;
+    resize: none;
+    font-size: 0.98em;
+  }
+
+  .submit {
+    display: none;
+    background-color: $black;
+    border: none;
+    color: $white;
+    height: 40px;
+    width: 100px;
+    margin-top: 15px;
+  }
+
+  .contactContainer {
+    background-color: $pink;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 260px;
+    top: 260px;
+    color: $white;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 35px;
+    p {
+      display: none;
+    }
+    a {
+      display: none;
+      color: $white;
+    }
+  }
+}
+
+@keyframes retour1 {
+  0% { transform: rotate(45deg); left: 20px; top: 28px;  background-color: black;}
+  100% { transform: rotate(-180deg);left: 0; top: 0; background-color: $pink;}
+}
+
+@keyframes retour2 {
+  0% {  transform: rotate(45deg); right: 28px; bottom: 20px; background-color: black;}
+  100% { transform: rotate(360deg); ; right: 0; bottom: 0; background-color: $pink;}
+}
+
+@keyframes rotate1 {
+  0% {  transform: rotate(0deg); left: 0; top: 0; background-color: #ed6a5a;}
+  100% { transform: rotate(135deg); left: 20px; top: 28px; background-color: black;}
+}
+
+@keyframes rotate2 {
+  0% {  transform: rotate(0deg); right: 0; bottom: 0; background-color: #ed6a5a;}
+  100% { transform: rotate(135deg); right: 28px; bottom: 20px; background-color: black;}
+}
+
+
+footer {
+  height: 100px;
+}
