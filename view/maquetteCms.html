@@ -39,14 +39,16 @@
       </nav>
 
       <article class="flexColumn perfectCenter">
-        <h2>{{ articles[0].title }}</h2>
-        <p>{{ articles[0].content }}</p><br>
+        <h2>{{ articles[length].title }}</h2>
+        <p>{{ articles[length].content }}</p><br>
         <div class="flexColumn perfectCenter">
           <div class="testZone">
             {{ articles[0].demo}}
           </div>
         </div>
       </article>
+      <button type="button" name="button" ng-click="before()">before</button>
+      <button type="button" name="button" ng-click="after()">after</button>
     </main>
     <footer>
     </footer>

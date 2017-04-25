@@ -31,8 +31,7 @@ while($data = $db->fetch()) {
 
 }
 
-$output .= $jsonObject;
-$output .=']}';
+$output .= $jsonObject . ']}';
 
 echo $output;
 
