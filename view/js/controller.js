@@ -10,7 +10,6 @@ app.controller("accessDataBase", function($scope, $http) {
 
     // affichage des boutons
 
-
     // navigation dans le blog avec les boutons before et after
     $scope.before = function() {
       if($scope.length >= 1) {
@@ -25,8 +24,9 @@ app.controller("accessDataBase", function($scope, $http) {
       }
     }
 
-    $scope.getIndex = function($event) {
+    $scope.getIndex = function($event, $name) {
       let index = $event.currentTarget.getAttribute('id');
+      index = index.replace($name, '');
       $scope.length = index;
     }
   });
