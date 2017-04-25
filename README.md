@@ -1,5 +1,3 @@
-# Version 2
+# Version 3
 
-Navigation entre les articles terminée (voir maquetteCms.html).
-
-Deux boutons ont été ajoutés et chacun reçoit un ng-click. Ces ng-click renvoient à dex fonction, before() et after(), définis dans controller.js.
+Navigation depuis la nav terminée

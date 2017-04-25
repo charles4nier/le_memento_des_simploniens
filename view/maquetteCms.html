@@ -18,24 +18,23 @@
       <nav class="flexBasis100 flexRow justifySpaceBetween container">
         <input type="text" name="" value="" placeholder="Search">
         <ul class="flexRow">
-          <li><a href="#">Html</a></li>
-          <li><a href="#">Css</a></li>
-          <li><a href="#">Js</a></li>
-          <li><a href="#">Php</a></li>
+          <li>HTML
+            <ul>
+              <li>Test</li>
+              <li>Test</li>
+              <li>Test</li>
+            </ul>
+          </li>
+          <li>CSS</li>
+          <li>JS</li>
+          <li>PHP</li>
         </ul>
       </nav>
     </header>
 
     <main class="flexRow justifySpaceAround" ng-controller="accessDataBase">
       <nav>
-        <li><a href="#">Last Article</a></li>
-        <li><a href="#">An Article</a></li>
-        <li><a href="#">an Article</a></li>
-        <li><a href="#">an Article</a></li>
-        <li><a href="#">an Article</a></li>
-        <li><a href="#">an Article</a></li>
-        <li><a href="#">an Article</a></li>
-        <li><a href="#">an Article</a></li>
+        <li ng-repeat="article in articles" id="{{ $index }}" ng-click="getIndex($event)">{{article.title}}</li>
       </nav>
 
       <article class="flexColumn perfectCenter">
@@ -43,11 +42,11 @@
         <p>{{ articles[length].content }}</p><br>
         <div class="flexColumn perfectCenter">
           <div class="testZone">
-            {{ articles[0].demo}}
+            {{ articles[length].demo}}
           </div>
         </div>
       </article>
-      <button type="button" name="button" ng-click="before()">before</button>
+      <button type="button" name="button" ng-click="before()" >before</button>
       <button type="button" name="button" ng-click="after()">after</button>
     </main>
     <footer>
