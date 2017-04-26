@@ -20,12 +20,24 @@
         <ul class="flexRow">
           <li>HTML
             <ul>
-              <li ng-repeat="article in articles" id="{{ 'headNav' + $index }}" ng-click="getIndex($event, 'headNav')">{{article.title}}</li>
+              <li ng-repeat="article in articles | filter : 'HTML'" ng-click="getIndex($event)">{{article.title}}</li>
             </ul>
           </li>
-          <li>CSS</li>
-          <li>JS</li>
-          <li>PHP</li>
+          <li>CSS
+            <ul>
+              <li ng-repeat="article in articles | filter : 'CSS'" ng-click="getIndex($event)">{{article.title}}</li>
+            </ul>
+          </li>
+          <li>JS
+            <ul>
+              <li ng-repeat="article in articles | filter : 'JS'"  ng-click="getIndex($event)">{{article.title}}</li>
+            </ul>
+          </li>
+          <li>PHP
+            <ul>
+              <li ng-repeat="article in articles | filter : 'PHP'"  ng-click="getIndex($event)">{{article.title}}</li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </header>
@@ -33,7 +45,7 @@
     <main class="flexRow justifySpaceAround">
       <nav>
         <ul>
-          <li ng-repeat="article in articles" id="{{ 'mainNav' + $index }}" ng-click="getIndex($event, 'mainNav')">{{article.title}}</li>
+          <li ng-repeat="article in articles" ng-click="getIndex($event)">{{article.title}}</li>
         </ul>
       </nav>
 
