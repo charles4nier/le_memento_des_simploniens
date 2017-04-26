@@ -93,14 +93,31 @@ header {
   input {
     width: 250px;
   }
+}
 
+li.parent {
+  margin: 5px 15px 0 15px;
+  list-style-type: none;
+  position: relative;
+  width: 100px;
+  ul {
+    display: none;
+    padding-left: 0;
+    position: absolute;
+  }
   li {
-    margin: 5px 15px 0 15px;
     list-style-type: none;
+    color: black;
+    background-color: $blue;
+    @include rounded-corners;
   }
 }
 
-
+li.parent:hover {
+  ul {
+    display: block;
+  }
+}
 
 main {
   background-color: $white;
@@ -128,6 +145,10 @@ main {
       margin-bottom: 25px;
     }
   }
+}
+
+.boutonContainer {
+  width: 100%;
 }
 
 

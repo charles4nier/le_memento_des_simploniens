@@ -11,6 +11,7 @@
     <script type="text/javascript" src="js/controller.js"></script>
   </head>
   <body class="flexColumn" ng-app="myApp" ng-controller="accessDataBase">
+
     <header class="flexRow flexWrap justifySpaceAround alignItemsCenter" >
       <button type="button" name="button" class="btn btn-primary"><a href="#">Home</a></button>
       <h1>Le lab !</h1>
@@ -18,22 +19,22 @@
       <nav class="flexBasis100 flexRow justifySpaceBetween container">
         <input type="text" name="" value="" placeholder="Search">
         <ul class="flexRow">
-          <li>HTML
+          <li class="parent">HTML
             <ul>
               <li ng-repeat="article in articles | filter : 'HTML'" ng-click="getIndex($event)">{{article.title}}</li>
             </ul>
           </li>
-          <li>CSS
+          <li class="parent">CSS
             <ul>
               <li ng-repeat="article in articles | filter : 'CSS'" ng-click="getIndex($event)">{{article.title}}</li>
             </ul>
           </li>
-          <li>JS
+          <li class="parent">JS
             <ul>
               <li ng-repeat="article in articles | filter : 'JS'"  ng-click="getIndex($event)">{{article.title}}</li>
             </ul>
           </li>
-          <li>PHP
+          <li class="parent">PHP
             <ul>
               <li ng-repeat="article in articles | filter : 'PHP'"  ng-click="getIndex($event)">{{article.title}}</li>
             </ul>
@@ -43,6 +44,7 @@
     </header>
 
     <main class="flexRow justifySpaceAround">
+      
       <nav>
         <ul>
           <li ng-repeat="article in articles" ng-click="getIndex($event)">{{article.title}}</li>
@@ -57,9 +59,12 @@
             {{ articles[length].demo}}
           </div>
         </div>
+        <div class="flexRow boutonContainer justifySpaceBetween">
+          <button type="button" name="button" ng-click="before()" >before</button>
+          <button type="button" name="button" ng-click="after()">after</button>
+        </div>
       </article>
-      <button type="button" name="button" ng-click="before()" >before</button>
-      <button type="button" name="button" ng-click="after()">after</button>
+
     </main>
     <footer>
     </footer>

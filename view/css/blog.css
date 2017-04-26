@@ -59,9 +59,24 @@ header {
     padding: 5px 0; }
   header input {
     width: 250px; }
-  header li {
-    margin: 5px 15px 0 15px;
-    list-style-type: none; }
+
+li.parent {
+  margin: 5px 15px 0 15px;
+  list-style-type: none;
+  position: relative;
+  width: 100px; }
+  li.parent ul {
+    display: none;
+    padding-left: 0;
+    position: absolute; }
+  li.parent li {
+    list-style-type: none;
+    color: black;
+    background-color: #337ab7;
+    border-radius: 5px; }
+
+li.parent:hover ul {
+  display: block; }
 
 main {
   background-color: white;
@@ -83,6 +98,9 @@ main {
       margin-bottom: 30px; }
     main article p, main article pre {
       margin-bottom: 25px; }
+
+.boutonContainer {
+  width: 100%; }
 
 footer {
   background-color: black;
