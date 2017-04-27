@@ -2,15 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-try {
-
-  $bdd = new PDO('mysql:host=localhost;dbname=portfolio_db;charset=utf8', 'charles4nier', 'coucou1948coucou1948');
-
-} catch (Exception $e) {
-
-  die('Erreur : ' . $e->getMessage());
-
-}
+require "sqlReq.php";
 
 $db = $bdd->query('SELECT * FROM article');
 

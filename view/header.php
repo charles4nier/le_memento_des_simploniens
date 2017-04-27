@@ -4,18 +4,30 @@
     <meta charset="utf-8">
     <title>Charles FOURNIER - Le Lab</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/blog.css">
-    <link rel="stylesheet" href="css/filter.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="view/css/blog.css">
+    <link rel="stylesheet" href="view/css/filter.css">
+    <link rel="stylesheet" href="view/css/animate.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script type="text/javascript" src="js/controller.js"></script>
+    <script type="text/javascript" src="view/js/controller.js"></script>
   </head>
   <body class="flexColumn" ng-app="myApp" ng-controller="accessDataBase">
 
     <header class="flexRow flexWrap justifySpaceAround alignItemsCenter" >
       <button type="button" name="button" class="btn btn-primary"><a href="#">Home</a></button>
       <h1>Le lab !</h1>
-      <button type="button" name="button" class="btn btn-primary"><a href="#">Login</a></button>
+      <?php
+        if($adminConnected) {
+      ?>
+      <a href="view/unset.php"><button type="button" name="button" class="btn btn-primary">Se déconnecter</button></a>
+      <a href="#"><button type="button" name="button" class="btn btn-primary">Nouvel article</button></a>
+      <?php
+        } else {
+      ?>
+        <a href="#openModal"><button type="button" name="button" class="btn btn-primary">Se connecter</button></a>
+      <?php
+        }
+      ?>
+
       <nav class="flexBasis100 flexRow justifySpaceBetween container">
         <input type="text" name="" value="" placeholder="Search">
         <ul class="flexRow">
@@ -42,33 +54,3 @@
         </ul>
       </nav>
     </header>
-
-    <main class="flexRow justifySpaceAround">
-      
-      <nav>
-        <ul>
-          <li ng-repeat="article in articles" ng-click="getIndex($event)">{{article.title}}</li>
-        </ul>
-      </nav>
-
-      <article class="flexColumn perfectCenter">
-        <h2>{{ articles[length].title }}</h2>
-        <p>{{ articles[length].content }}</p><br>
-        <div class="flexColumn perfectCenter">
-          <div class="testZone">
-            {{ articles[length].demo}}
-          </div>
-        </div>
-        <div class="flexRow boutonContainer justifySpaceBetween">
-          <button type="button" name="button" ng-click="before()" >before</button>
-          <button type="button" name="button" ng-click="after()">after</button>
-        </div>
-      </article>
-
-    </main>
-    <footer>
-    </footer>
-    <script type="text/javascript" src="js/ease.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-  </body>
-</html>
