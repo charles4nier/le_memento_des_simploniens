@@ -19,7 +19,7 @@
         if($adminConnected) {
       ?>
       <a href="view/unset.php"><button type="button" name="button" class="btn btn-primary">Se déconnecter</button></a>
-      <a href="#"><button type="button" name="button" class="btn btn-primary">Nouvel article</button></a>
+      <a href=""><button type="button" name="button" class="btn btn-primary" ng-click="show = !show" ng-hide="showEditForm">Nouvel article</button></a>
       <?php
         } else {
       ?>
@@ -28,8 +28,8 @@
         }
       ?>
 
-      <nav class="flexBasis100 flexRow justifySpaceBetween container">
-        <input type="text" name="" value="" placeholder="Search">
+      <nav class="flexBasis100 flexRow justifySpaceBetween container" ng-show="!show" ng-hide="showEditForm">
+        <input type="text" name="" value="" placeholder="Search" >
         <ul class="flexRow">
           <li class="parent">HTML
             <ul>

@@ -16,7 +16,8 @@ while($data = $db->fetch()) {
     $jsonObject .= ",";
   }
 
-  $jsonObject .= '{"type" : "' .$data["type"]. '",';
+  $jsonObject .= '{"id" : "' .$data["id"]. '",';
+  $jsonObject .= '"type" : "' .$data["type"]. '",';
   $jsonObject .= '"title" : "' .$data["title"]. '",';
   $jsonObject .= '"content" : "' .$data["content"]. '",';
   $jsonObject .= '"demo" : "' .$data["demo"]. '"}';
