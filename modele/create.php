@@ -1,11 +1,6 @@
 <?php
 
-session_start();
-
-$title = $_POST['title'];
-$type = $_POST['type'];
-$content = $_POST['content'];
-$demo = $_POST['demo'];
+require 'issetPost.php';
 
 require 'sqlReq.php';
 

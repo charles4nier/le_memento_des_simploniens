@@ -1,6 +1,6 @@
 <main class="flexRow justifySpaceAround">
 
-  <form class="flexColumn perfectCenter" action="../modele/create.php" method="post" ng-show="show">
+  <form class="flexColumn perfectCenter" action="modele/create.php" method="post" ng-show="show">
     <label for="type">type :</label>
     <input type="text" name="type" value="">
 
@@ -16,7 +16,10 @@
     <input type="submit" name="submit" value="Envoyer">
   </form>
 
-  <form class="flexColumn perfectCenter" action="../modele/edit.php" method="post" ng-show="showEditForm">
+  <form class="flexColumn perfectCenter" action="modele/edit.php" method="post" ng-show="showEditForm">
+
+    <input type="hidden" name="id" value="{{articles[length].id}}">
+
     <label for="type">type :</label>
     <input type="text" name="type" value="{{articles[length].type}}">
 
@@ -43,7 +46,7 @@
       if($adminConnected == true)
       {
     ?>
-    <a href="index.php?supprimer={{articles[length].id}}"><button type="button" name="button">Supprimer l'article</button></a>
+    <a href="modele/delete.php?supprimer={{articles[length].id}}"><button type="button" name="button">Supprimer l'article</button></a>
     <a href="" ng-click="showEditForm = !showEditForm"><button type="button" name="button">Editer l'article</button></a>
     <?php
       }
@@ -56,7 +59,7 @@
       </div>
     </div>
     <div class="flexRow boutonContainer justifySpaceBetween">
-      <button type="button" name="button" ng-click="before()" >before</button>
+      <button type="button" name="button" ng-click="before()">before</button>
       <button type="button" name="button" ng-click="after()">after</button>
     </div>
   </article>
