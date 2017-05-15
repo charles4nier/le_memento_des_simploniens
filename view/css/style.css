@@ -93,7 +93,7 @@ header {
         content: "";
         width: 100%;
         height: 2px;
-        background-color: #75ffba;
+        background-color: #69f0ae;
         bottom: -2px;
         transition: all 0.4s ease-in-out;
         transform: scale(0); }
@@ -105,7 +105,7 @@ header {
         color: #ff5953; }
 
 .home {
-  background-color: #75ffba;
+  background-color: #69f0ae;
   height: 100vh; }
   .home div {
     background-color: white;
@@ -115,7 +115,7 @@ header {
     box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49); }
 
 .latestWork {
-  background-color: #eeeeee;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   font-weight: bold;
   height: calc(100vh + 160px);
   padding: 80px 0; }
@@ -151,10 +151,10 @@ header {
     font-weight: normal; }
     .workInfo li span {
       font-size: 0.96em;
-      color: #75ffba; }
+      color: #69f0ae; }
 
 .skills {
-  background-color: #75ffba; }
+  background-color: #69f0ae; }
   .skills h1 {
     color: #2d2d2a;
     display: none; }
@@ -176,7 +176,7 @@ header {
         text-align: center; }
 
 .aboutMe {
-  background-color: #75ffba; }
+  background-color: #69f0ae; }
   .aboutMe section {
     display: none;
     height: 500px;
@@ -199,7 +199,7 @@ header {
 .liTitle {
   list-style: square;
   margin-bottom: 25px;
-  color: #75ffba; }
+  color: #69f0ae; }
   .liTitle ul {
     margin-top: 10px; }
   .liTitle li {
@@ -218,7 +218,7 @@ header {
   .contact .formContainer {
     overflow: visible !important;
     position: absolute;
-    background-color: #75ffba;
+    background-color: #69f0ae;
     top: 40px;
     left: -40px;
     width: 4px;
@@ -347,5 +347,7 @@ header {
     background-color: black; } }
 footer {
   height: 100px; }
+  footer p {
+    color: #eeeeee; }
 
 /*# sourceMappingURL=style.css.map */

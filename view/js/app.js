@@ -243,8 +243,8 @@ $(function () {
 
   $(".work").mouseenter(function() {
      let filter = $("#" + $(this).attr("id") + "workInfo");
-     filter.slideDown(350,
-     "easeInCubic",
+     filter.slideDown(450,
+     "easeInOutCubic",
      function() {
      });
 
@@ -267,7 +267,7 @@ $(function () {
     function() {
     });
   });
-//
+// .......
 //   let previousX = 0;
 //   let vectorX = 0;
 //   let xComparator = 0;
@@ -281,7 +281,7 @@ $(function () {
 // //Animation d'entrée des informations
 //   function filterIn(elem, animation) {
 //     elem.removeClass()
-//         .addClass("figureInfo")
+//         .addClass("workInfo")
 //         .addClass(animation)
 //   }
 //
@@ -299,7 +299,7 @@ $(function () {
 //     // permet de rendre positif un nombre négatif //
 //     yComparator = (vectorY * vectorY);
 //
-//     $("figure").mouseenter(function() {
+//     $("work").mouseenter(function() {
 //
 //       $(this).click(function() {
 //         let i = 0;
@@ -312,12 +312,12 @@ $(function () {
 //         }
 //       });
 //
-//       let filter = $("#" + $(this).attr("id") + "FigureInfo");
+//       let filter = $("#" + $(this).attr("id") + "workInfo");
 //
 //       //Animation de sorties des informations
 //         function filterOut(elem, animation) {
 //           elem.removeClass()
-//               .addClass('figureInfo')
+//               .addClass('workInfo')
 //               .addClass(animation);
 //         }
 //
@@ -346,7 +346,7 @@ $(function () {
 //         }
 //       }
 //
-//       $('figure').mouseleave(function() {
+//       $('work').mouseleave(function() {
 //         // filter.removeClass()
 //         //       .addClass('figureInfo')
 //         //       .addClass("animeOutFilter filterOutDown");

@@ -61,16 +61,7 @@ $blue: #337ab7;
 }
 
 .mainSection {
-  height: 100vh;
   padding-bottom: 80px;
-}
-
-.testZone {
-  width : 90%;
-  height: 250px;
-  background-color: $blue;
-  border: 1px solid $grey;
-  @include rounded-corners;
 }
 
 body {
@@ -122,6 +113,22 @@ li.parent:hover {
 main {
   background-color: $white;
   align-items: flex-start;
+  min-height: 100vh;
+
+  form {
+    background-color: $blue;
+    padding: 15px 10px;
+    margin-top: calc(50% - 265px);
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  input, textarea {
+    margin-bottom: 15px;
+    width: 350px;
+  }
 
   nav {
     padding: 20px 50px 50px 50px;
@@ -137,6 +144,8 @@ main {
     margin-top: 30px;
     margin-right: 150px;
     width: 55%;
+    align-items: center;
+    min-height: 100vh;
     @include rounded-corners;
     h2 {
       margin-bottom: 30px;

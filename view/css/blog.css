@@ -36,15 +36,7 @@
   flex-basis: 100%; }
 
 .mainSection {
-  height: 100vh;
   padding-bottom: 80px; }
-
-.testZone {
-  width: 90%;
-  height: 250px;
-  background-color: #337ab7;
-  border: 1px solid #bababa;
-  border-radius: 5px; }
 
 body {
   background-color: white; }
@@ -80,7 +72,17 @@ li.parent:hover ul {
 
 main {
   background-color: white;
-  align-items: flex-start; }
+  align-items: flex-start;
+  min-height: 100vh; }
+  main form {
+    background-color: #337ab7;
+    padding: 15px 10px;
+    margin-top: calc(50% - 265px); }
+  main textarea {
+    resize: none; }
+  main input, main textarea {
+    margin-bottom: 15px;
+    width: 350px; }
   main nav {
     padding: 20px 50px 50px 50px;
     border: 1px solid #bababa;
@@ -93,6 +95,8 @@ main {
     margin-top: 30px;
     margin-right: 150px;
     width: 55%;
+    align-items: center;
+    min-height: 100vh;
     border-radius: 5px; }
     main article h2 {
       margin-bottom: 30px; }
