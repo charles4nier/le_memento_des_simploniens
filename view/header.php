@@ -31,11 +31,6 @@
 
       <nav class="flexBasis100 flexRow flexWrap perfectCenter" ng-show="!show" ng-hide="showEditForm">
         <ul class="flexRow flexWrap">
-          <li class="parent">HTML
-            <ul>
-              <li ng-repeat="article in articles | filter : 'HTML'" ng-click="getIndex($event)">{{article.title}}</li>
-            </ul>
-          </li>
           <li class="parent">CSS
             <ul>
               <li ng-repeat="article in articles | filter : 'CSS'" ng-click="getIndex($event)">{{article.title}}</li>

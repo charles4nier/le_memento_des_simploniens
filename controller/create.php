@@ -2,15 +2,8 @@
 
 require 'issetPost.php';
 
-require '../modele/sqlReq.php';
+require '../modele/crudArticles.php';
 
-$req =  $bdd->prepare('INSERT INTO article (title, type, content, demo) VALUES (:title, :type, :content, :demo)');
-
-$req->execute(array(
-  'title' => $title,
-  'type' => $type,
-  'content' => $content,
-  'demo' => $demo
-));
+createArticle($title, $type, $content, $demo);
 
 header('Location: http://localhost/portfolio_angularJs/controller/index.php');

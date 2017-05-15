@@ -2,16 +2,8 @@
 
 require 'issetPost.php';
 
-require '../modele/sqlReq.php';
+require '../modele/crudArticles.php';
 
-$req = $bdd->prepare('UPDATE article SET type = :nvxType, title = :nvxTitle, content = :nvxContent, demo = :nvxDemo WHERE id = :id');
-
-$req->execute(array(
-  'nvxType' => $type,
-  'nvxTitle' => $title,
-  'nvxContent' => $content,
-  'nvxDemo' => $demo,
-  'id' => $id
-));
+editArticle($type, $title, $content, $demo, $id);
 
 header('Location: http://localhost/portfolio_angularJs/controller/index.php');
