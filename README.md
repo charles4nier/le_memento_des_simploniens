@@ -14,3 +14,7 @@ Tous les contrôleurs fonctionnent : il est possible d'éditer, de créer ou sup
 Modification sur l'architecture du site : il restait toujours des fichiers avec des vues et des contrôleurs mélangés.
 
 Dorénavant, tous les appels à la base de données pour effectuer des "CRUD" se font via le ficher crudArticles.php
+
+# Version 8
+
+Ajout du style et du responsive

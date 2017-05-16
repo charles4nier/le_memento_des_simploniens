@@ -1,5 +1,6 @@
-<main class="flexRow justifySpaceAround">
+<main class="container">
 
+<div class="row">
   <form class="flexColumn perfectCenter" action="create.php" method="post" ng-show="show">
     <label for="type">type :</label>
     <input type="text" name="type" value="">
@@ -35,34 +36,46 @@
     <input type="submit" name="submit" value="Envoyer">
   </form>
 
-  <nav ng-show="!show" ng-hide="showEditForm">
+
+
+  <div class="col-md-offset-2 col-md-8 col-sm-12">
+    <article class="flexColumn justifySpaceBetween" ng-show="!show" ng-hide="showEditForm">
+      <?php
+        if($adminConnected == true)
+        {
+      ?>
+      <div class="boutonContainer flexRow justifySpaceBetween">
+        <a href="delete.php?supprimer={{articles[length].id}}"><button type="button" name="button">Supprimer l'article</button></a>
+        <a href="" ng-click="showEditForm = !showEditForm"><button type="button" name="button">Editer l'article</button></a>
+      </div>
+      <?php
+        }
+      ?>
+      <h2>{{ articles[length].title }}</h2>
+      <p>{{ articles[length].content }}</p><br>
+      <div class="flexColumn perfectCenter">
+        <div class="testZone">
+          {{ articles[length].demo}}
+        </div>
+      </div>
+      <nav class="flexRow boutonContainer justifySpaceBetween">
+        <button type="button" name="button" ng-click="before()">before</button>
+        <button type="button" name="button" ng-click="after()">after</button>
+      </nav>
+    </article>
+  </div>
+
+  <nav class="col-md-2 hidden-xs hidden-sm" ng-show="!show" ng-hide="showEditForm">
+    <h2 class="text-center">Tous les articles</h2>
     <ul>
       <li ng-repeat="article in articles" ng-click="getIndex($event)">{{article.title}}</li>
     </ul>
   </nav>
 
-  <article class="flexColumn justifySpaceBetween" ng-show="!show" ng-hide="showEditForm">
-    <?php
-      if($adminConnected == true)
-      {
-    ?>
-    <div class="boutonContainer flexRow justifySpaceBetween">
-      <a href="delete.php?supprimer={{articles[length].id}}"><button type="button" name="button">Supprimer l'article</button></a>
-      <a href="" ng-click="showEditForm = !showEditForm"><button type="button" name="button">Editer l'article</button></a>
-    </div>
-    <?php
-      }
-    ?>
-    <h2>{{ articles[length].title }}</h2>
-    <p>{{ articles[length].content }}</p><br>
-    <div class="flexColumn perfectCenter">
-      <div class="testZone">
-        {{ articles[length].demo}}
-      </div>
-    </div>
-    <nav class="flexRow boutonContainer justifySpaceBetween">
-      <button type="button" name="button" ng-click="before()">before</button>
-      <button type="button" name="button" ng-click="after()">after</button>
-    </nav>
-  </article>
+</div>
+
+
+
+
+
 </main>

@@ -1,10 +1,32 @@
-$grey : #bababa;
-$white: white;
-$blue: #337ab7;
-
-@mixin rounded-corners {
-  border-radius: 5px;
+@font-face {
+  src: url("../fonts/Oswald-Regular.ttf");
+  font-family: "Oswald";
+  font-weight: normal;
 }
+
+@font-face {
+  src: url("../fonts/Oswald-Bold.ttf");
+  font-family: "Oswald";
+  font-weight: bold;
+}
+
+@font-face {
+  src: url("../fonts/Oswald-Light.ttf");
+  font-family: "Oswald";
+  font-weight: 200;
+}
+
+$lightgrey: #eeeeee;
+$pink: #ff5953;
+$lagoon: #69f0ae;
+$white: white;
+$black: #2d2d2a;
+$darkgrey: #333333;
+$orange : $lagoon;
+
+// @mixin rounded-corners {
+//   border-radius: 3px;
+// }
 
 .flexRow,
 .flexColumn {
@@ -29,6 +51,14 @@ $blue: #337ab7;
 
 .justifyCenter {
   justify-content: center;
+}
+
+.justifyFlexEnd {
+  justify-content: flex-end;
+}
+
+.justifyFlexStart {
+  justify-content: flex-start;
 }
 
 .justifySpaceAround {
@@ -66,18 +96,51 @@ $blue: #337ab7;
 
 body {
   background-color: $white;
+  font-family: "Oswald" !important;
+  font-size: 18px;
+  width: 100%;
+  height: auto;
+}
+
+button {
+  width: 180px;
+  height: 40px;
+  margin: 7px 0 !important;
+  background-color: $pink !important;
+  border: 1px solid $pink !important;
+  color: $white !important;
 }
 
 header {
-  background-color: black;
-  color: $white;
+  background-color: $lagoon;
+  color: $darkgrey;
+  border-bottom: 1px solid $pink;
 
-  button a {
+  .blackHeader {
+    padding: 5px 0 10px 0;
+  }
+
+  h1 {
+    text-align: center;
     color: $white;
+    font-weight: bold;
+    height: 50px;
+    span {
+      color: $pink;
+    }
+  }
+
+  .connexion {
+    margin-top: 15px;
+  }
+
+  button {
+    padding-bottom: 10px !important;
+    border-radius: 0 !important;
   }
 
   nav {
-    background-color: $grey;
+    background-color: $darkgrey;
     padding: 5px 0;
   }
 
@@ -91,16 +154,32 @@ li.parent {
   list-style-type: none;
   position: relative;
   width: 100px;
+  color: $white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  padding: 5px;
+  text-align: center;
+  &:hover {
+    background-color: $lagoon;
+    color: $darkgrey;
+  }
   ul {
     display: none;
     padding-left: 0;
     position: absolute;
+    width: 100%;
+    left: 0;
   }
   li {
     list-style-type: none;
-    color: black;
-    background-color: $blue;
-    @include rounded-corners;
+    color: $white;
+    padding: 5px;
+    background-color: $darkgrey;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-color: $pink;
+      color: $white;
+    }
   }
 }
 
@@ -116,9 +195,10 @@ main {
   min-height: 100vh;
 
   form {
-    background-color: $blue;
+    background-color: $pink;
     padding: 15px 10px;
-    margin-top: calc(50% - 265px);
+    margin: 50px auto;
+    width: 50%;
   }
 
   textarea {
@@ -131,63 +211,130 @@ main {
   }
 
   nav {
-    padding: 20px 50px 50px 50px;
-    border: 1px solid $grey;
+    padding: 20px;
     margin-top: 30px;
-    @include rounded-corners;
+    color: $darkgrey;
+
+    h2 {
+      color: $lagoon;
+      font-size: 1.6em;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    ul {
+      padding: 0;
+    }
+
+    li {
+      margin-left: 5px;
+      margin-bottom: 5px;
+      cursor: pointer;
+      padding: 5px;
+      transition: all 0.1s ease-in-out;
+      list-style: none;
+      &:hover {
+        color: $white;
+        background-color: $pink;
+      }
+    }
   }
 
   article {
-    background-color: white;
-    padding: 20px 50px 50px 50px;
-    border: 1px solid $grey;
+    background-color: $darkgrey;
+    color: $white;
+    padding: 5px;
     margin-top: 30px;
-    margin-right: 150px;
-    width: 55%;
     align-items: center;
+    width: 100% !important;
     min-height: 100vh;
-    @include rounded-corners;
     h2 {
       margin-bottom: 30px;
+      color: $white;
     }
     p, pre {
       margin-bottom: 25px;
+      font-size: 1.2em;
     }
   }
 }
 
 .boutonContainer {
   width: 100%;
+
+  padding: 5px;
 }
 
 
-.modalContent {
+#openModal {
   position: absolute;
+  top: 0;
+  left: 0;
   z-index: -1;
   width: 100%;
   height: 100%;
+  display: none;
   background-color: rgba(0,0,0,0.8);
-  display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
   transition: all 0.2s ease-in-out;
 }
 
 .myModal {
   margin: 0 auto;
-  background-color: $grey;
+  background-color: $lightgrey;
   padding: 20px 50px;
-  @include rounded-corners;
+
+  a {
+    color: $pink;
+    &:hover {
+      color: $pink;
+      text-decoration: none;
+    }
+
+    &:focus {
+      outline: none;
+      color: $pink;
+    }
+
+    &:link {
+      color: $pink;
+    }
+  }
 }
 
 #openModal:target {
   z-index: 5;
-  opacity: 1;
+  display: flex;
 }
 
 footer {
-  background-color: black;
+  background-color: $darkgrey;
   margin-top: 30px;
   height: 80px;
+}
+
+@media all and (max-width: 500px) {
+
+    button {
+      width: 140px !important;
+    }
+
+    header {
+      ul {
+        flex-direction: column !important;
+      }
+    }
+
+    li.parent:hover {
+      ul {
+        display: block;
+        top: 0;
+        left: 100px;
+      }
+    }
+
+    form {
+      width: 100% !important;
+    }
 }
