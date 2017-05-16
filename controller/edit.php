@@ -1,5 +1,4 @@
 <?php
-
 require 'issetPost.php';
 
 require '../modele/crudArticles.php';

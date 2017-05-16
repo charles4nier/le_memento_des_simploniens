@@ -16,7 +16,7 @@ foreach ($articles as $article) {
       "id" : "<?= $article["id"] ?>",
       "type" : "<?= $article["type"] ?>",
       "title" : "<?= $article["title"] ?>",
-      "content" : "<?= $article["content"] ?>",
+      "content" : "<?= trim(preg_replace('/\s\s+/', '<br>', $article["content"])) ?>",
       "demo" : "<?= $article["demo"] ?>"
     }<?php
   $first = false;
