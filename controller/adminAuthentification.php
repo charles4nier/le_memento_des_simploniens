@@ -3,7 +3,7 @@
 session_start();
 
 if(isset($_POST['login']) && isset($_POST['password'])) {
-  require '../modele/sqlReq.php';
+  require '../model/sqlReq.php';
 
   $req = $bdd->prepare('SELECT * FROM user WHERE login=:login AND password=:password');
   $req->execute(array(

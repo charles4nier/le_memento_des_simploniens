@@ -2,7 +2,7 @@
 
 require 'issetPost.php';
 
-require '../modele/crudArticles.php';
+require '../model/crudArticles.php';
 
 createArticle($title, $type, $content, $demo);
 

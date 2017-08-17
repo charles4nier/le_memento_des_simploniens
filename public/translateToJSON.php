@@ -1,5 +1,5 @@
 <?php
-require "../modele/crudArticles.php";
+require "../model/crudArticles.php";
 
 $articles = getArticles();
 

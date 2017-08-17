@@ -1,7 +1,7 @@
 <?php
 require 'issetPost.php';
 
-require '../modele/crudArticles.php';
+require '../model/crudArticles.php';
 
 editArticle($type, $title, $content, $demo, $id);
 

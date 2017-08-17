@@ -18,3 +18,7 @@ Dorénavant, tous les appels à la base de données pour effectuer des "CRUD" se
 # Version 8
 
 Ajout du style et du responsive
+
+# Version 9
+
+Modification de l'arborescence du site, avec implatation d'un fichier htaccess et d'un dossier "public"
