@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <title>Charles FOURNIER - Le Blog</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="view/css/blog.css">
-    <link rel="stylesheet" href="view/css/filter.css">
-    <link rel="stylesheet" href="view/css/animate.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/filter.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script type="text/javascript" src="./view/js/controller.js"></script>
+    <script type="text/javascript" src="js/controller.js"></script>
   </head>
   <body ng-app="myApp" ng-controller="accessDataBase">
     <div class="modalContent" id="openModal">
