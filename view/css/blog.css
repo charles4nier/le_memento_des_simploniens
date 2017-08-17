@@ -113,13 +113,18 @@ li.parent {
     padding-left: 0;
     position: absolute;
     width: 100%;
-    left: 0; }
+    left: 0;
+    z-index: 5;
+    background-color: #ff5953;
+    border: 2px solid #ff5953;
+    }
   li.parent li {
     list-style-type: none;
     color: white;
     padding: 5px;
     background-color: #333333;
-    transition: all 0.2s ease-in-out; }
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 2px;}
     li.parent li:hover {
       background-color: #ff5953;
       color: white; }

@@ -4,15 +4,14 @@
     <meta charset="utf-8">
     <title>Charles FOURNIER - Le Blog</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../view/css/blog.css">
-    <link rel="stylesheet" href="../view/css/filter.css">
-    <link rel="stylesheet" href="../view/css/animate.css">
+    <link rel="stylesheet" href="view/css/blog.css">
+    <link rel="stylesheet" href="view/css/filter.css">
+    <link rel="stylesheet" href="view/css/animate.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script type="text/javascript" src="../view/js/controller.js"></script>
+    <script type="text/javascript" src="./view/js/controller.js"></script>
   </head>
   <body ng-app="myApp" ng-controller="accessDataBase">
-
     <div class="modalContent" id="openModal">
       <form class="myModal flexColumn perfectCenter" action="index.php" method="post">
         <p>Se connecter</p>
@@ -22,7 +21,6 @@
         <a href="index.php">close</a>
       </form>
     </div>
-
     <header class="container-fluid">
       <div class="row blackHeader">
         <h1 class="col-md-offset-4 col-md-4 col-sm-12">Charles<span>4</span>nier's Blog</h1>
@@ -42,10 +40,7 @@
             }
           ?>
         </div>
-
       </div>
-
-
       <nav class="row" ng-show="!show" ng-hide="showEditForm">
         <ul class="flexRow flexWrap justifyFlexStart">
           <li class="parent">CSS
