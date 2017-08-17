@@ -1,6 +1,6 @@
 <main class="container">
   <div class="row">
-    <form class="flexColumn perfectCenter" action="create.php" method="post" ng-show="show">
+    <form class="flexColumn perfectCenter" action="../public/articles/store.php" method="post" ng-show="show">
       <label for="type">type :</label>
       <input type="text" name="type" value="">
       <label for="title">Title :</label>
@@ -11,7 +11,7 @@
       <input type="text" name="demo" value="">
       <input type="submit" name="submit" value="Envoyer">
     </form>
-    <form class="flexColumn perfectCenter" action="edit.php" method="post" ng-show="showEditForm">
+    <form class="flexColumn perfectCenter" action="../public/articles/update.php" method="post" ng-show="showEditForm">
       <input type="hidden" name="id" value="{{articles[length].id}}">
       <label for="type">type :</label>
       <input type="text" name="type" value="{{articles[length].type}}">
@@ -30,7 +30,7 @@
           {
         ?>
         <div class="boutonContainer flexRow justifySpaceBetween">
-          <a href="delete.php?supprimer={{articles[length].id}}"><button type="button" name="button">Supprimer l'article</button></a>
+          <a href="../public/articles/delete.php?supprimer={{articles[length].id}}"><button type="button" name="button">Supprimer l'article</button></a>
           <a href="" ng-click="showEditForm = !showEditForm"><button type="button" name="button">Editer l'article</button></a>
         </div>
         <?php

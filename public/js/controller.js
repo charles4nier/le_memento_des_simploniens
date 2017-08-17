@@ -1,7 +1,7 @@
 let app = angular.module("myApp", []);
 
 app.controller("accessDataBase", function($scope, $http) {
-  $http.get("translateToJSON.php")
+  $http.get("articles/index.php")
   .then(function(response) {
 
     // récupération de la base de donnée
