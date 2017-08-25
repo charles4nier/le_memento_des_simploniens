@@ -1,6 +1,6 @@
 <?php
-require "../../model/crudArticles.php";
+  require "../../model/Article.php";
 
-$articles = getArticles();
+  $articles = Article::getArticles();
 
-require "../../view/articles/JSON.php";
+  require "../../view/articles/JSON.php";

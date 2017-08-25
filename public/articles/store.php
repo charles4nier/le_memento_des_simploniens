@@ -1,4 +1,3 @@
 <?php
-echo 'hello';
 
-require "../../controller/create.php";
+  require "../../controller/create.php";

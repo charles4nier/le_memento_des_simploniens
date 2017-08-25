@@ -2,8 +2,8 @@
 
 require '../../controller/issetPost.php';
 
-require '../../model/crudArticles.php';
+require '../../model/Article.php';
 
-createArticle($title, $type, $content, $demo);
+Article::createArticle($title, $type, $content, $demo);
 
 header('Location: http://localhost/portfolio_angularJs/public/index.php');
