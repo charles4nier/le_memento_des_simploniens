@@ -3,14 +3,9 @@
 session_start();
 
 if(isset($_POST['login']) && isset($_POST['password'])) {
-  require '../model/sqlReq.php';
+  require '../model/User.php';
 
-  $req = $bdd->prepare('SELECT * FROM user WHERE login=:login AND password=:password');
-  $req->execute(array(
-    'login'=> $_POST['login'],
-    'password'=> $_POST['password']
-  ));
-  $user = $req->fetch();
+  $user = User::connect($_POST['login'], $_POST['password']);
 
   if($user)
   {

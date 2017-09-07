@@ -13,11 +13,10 @@ foreach ($articles as $article) {
   }
 ?>
     {
-      "id" : "<?= $article["id"] ?>",
-      "type" : "<?= $article["type"] ?>",
+      "id_article" : "<?= $article["id_article"] ?>",
       "title" : "<?= $article["title"] ?>",
       "content" : "<?= trim(preg_replace('/\s\s+/', '', $article["content"])) ?>",
-      "demo" : "<?= $article["demo"] ?>"
+      "link" : "<?= $article["link"] ?>"
     }<?php
   $first = false;
 }

@@ -6,7 +6,6 @@
 
    /**
     * getArticles recovers all articles in the "article" table
-    *
     * @return array including all the data coming from the targeted table
     */
    public static function getArticles () {
@@ -24,14 +23,14 @@
     *
     * @param string $id : Input article's id
     */
-    public static function deleteArticle ($id) {
+    public static function deleteArticle ($id_article) {
      global $bdd;
 
-      if(gettype($id) != 'integer' && $id != '0') {
-        $req =  $bdd->prepare('DELETE FROM article WHERE id = :id');
+      if(gettype($id_article) != 'integer' && $id_article != '0') {
+        $req =  $bdd->prepare('DELETE FROM article WHERE id_article = :id_article');
 
         return $req->execute(array(
-          'id' => $id
+          'id_article' => $id_article
         ));
       }
 
@@ -40,44 +39,38 @@
 
    /**
     * createArticle creates and stores an article into the targeted table
-    *
-    * @param number $id : Input article's id
-    * @param string $type : Typifys the content (Js, Php, Css, Html)
     * @param string $content : The article content
-    * @param string $demo : A way to explain the article's content by linking a * website or giving a code example
+    * @param string $link : A way to explain the article's content by linking a * website or giving a code example
     */
-   public static function createArticle ($title, $type, $content, $demo) {
+   public static function createArticle ($title, $content, $link) {
      global $bdd;
 
-     $req =  $bdd->prepare('INSERT INTO article (title, type, content, demo) VALUES (:title, :type, :content, :demo)');
+     $req =  $bdd->prepare('INSERT INTO article (title, content, link) VALUES (:title, :content, :link)');
 
      $req->execute(array(
        'title' => $title,
-       'type' => $type,
        'content' => $content,
-       'demo' => $demo
+       'link' => $link
      ));
    }
 
    /**
     * editArticle edits an article from the targeted table
     *
-    * @param number $id : Input article's id
-    * @param string $type : Typifys the content (Js, Php, Css, Html)
+    * @param number $id_article : Input article's id
     * @param string $content : The article content
-    * @param string $demo : A way to explain the article's content by linking a * website or giving a code example
+    * @param string $link : A way to explain the article's content by linking a * website or giving a code example
     */
-   public static function editArticle ($type, $title, $content, $demo, $id) {
+   public static function editArticle ($title, $content, $link, $id_article) {
      global $bdd;
 
-     $req = $bdd->prepare('UPDATE article SET type = :nvxType, title = :nvxTitle, content = :nvxContent, demo = :nvxDemo WHERE id = :id');
+     $req = $bdd->prepare('UPDATE article SET title = :nvxTitle, content = :nvxContent, link = :nvxLink WHERE id_article = :id_article');
 
      $req->execute(array(
-       'nvxType' => $type,
        'nvxTitle' => $title,
        'nvxContent' => $content,
-       'nvxDemo' => $demo,
-       'id' => $id
+       'nvxLink' => $link,
+       'id_article' => $id_article
      ));
    }
  }

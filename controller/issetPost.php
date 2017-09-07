@@ -2,10 +2,15 @@
 
 session_start();
 
-if(isset($_POST['id']) || isset($_POST['type']) || isset($_POST['title']) || isset($_POST['content']) || isset($_POST['demo'])) {
-  $id = $_POST['id'];
+if(isset($_POST['id_article']) || isset($_POST['title']) || isset($_POST['content']) || isset($_POST['link'])) {
+  $id_article = $_POST['id_article'];
   $title = $_POST['title'];
-  $type = strtoupper($_POST['type']);
   $content = $_POST['content'];
-  $demo = $_POST['demo'];
+  $link = $_POST['link'];
 }
+
+// for($i = 1; $i < tag_count; ++$i) {
+//   if(isset($_POST['tag'.$i])) {
+//     $tags[$i] = $_POST['tag'.$i];
+//   }
+// }

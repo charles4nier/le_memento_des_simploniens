@@ -41,23 +41,4 @@
           ?>
         </div>
       </div>
-      <nav class="row" ng-show="!show" ng-hide="showEditForm">
-        <ul class="flexRow flexWrap justifyFlexStart">
-          <li class="parent">CSS
-            <ul>
-              <li ng-repeat="article in articles | filter : 'CSS'" ng-click="getIndex($event)">{{article.title}}</li>
-            </ul>
-          </li>
-          <li class="parent">JS
-            <ul>
-              <li ng-repeat="article in articles | filter : 'JS'"  ng-click="getIndex($event)">{{article.title}}</li>
-            </ul>
-          </li>
-          <li class="parent">PHP
-            <ul>
-              <li ng-repeat="article in articles | filter : 'PHP'"  ng-click="getIndex($event)">{{article.title}}</li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
     </header>
