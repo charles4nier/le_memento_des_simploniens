@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>Le mémento des Simploniens</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/blog.css">
     <link rel="stylesheet" href="css/filter.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -23,8 +22,9 @@
     </div>
     <header class="container-fluid">
       <div class="row blackHeader">
-        <h1 class="col-md-offset-3 col-md-5 col-sm-12">Le mémento des Simploniens</h1>
-        <div class=" col-md-4 col-sm-12 flexColumn justifyCenter text-right">
+        <div class="col-md-3 col-sm-12 flexColumn justifyCenter"><a href="../public/session/unset.php"><button type="button" name="button" class="btn btn-primary">Articles par tags</button></a></div>
+        <h1 class="col-md-6 col-sm-12">Ressources utiles</h1>
+        <div class="col-md-3 col-sm-12 flexColumn justifyCenter text-right">
           <?php
             if($adminConnected) {
           ?>

@@ -1,27 +1,9 @@
-@font-face {
-  src: url("../fonts/Oswald-Regular.ttf");
-  font-family: "Oswald";
-  font-weight: normal;
-}
-
-@font-face {
-  src: url("../fonts/Oswald-Bold.ttf");
-  font-family: "Oswald";
-  font-weight: bold;
-}
-
-@font-face {
-  src: url("../fonts/Oswald-Light.ttf");
-  font-family: "Oswald";
-  font-weight: 200;
-}
-
 $lightgrey: #eeeeee;
 $pink: #ff5953;
-$lagoon: #69f0ae;
+$lagoon: #5eefb6;
 $white: white;
 $black: #2d2d2a;
-$darkgrey: #333333;
+$darkgrey: #272629;
 $orange : $lagoon;
 
 // @mixin rounded-corners {
@@ -96,7 +78,6 @@ $orange : $lagoon;
 
 body {
   background-color: $white;
-  font-family: "Oswald" !important;
   font-size: 18px;
   width: 100%;
   height: auto;
@@ -106,32 +87,31 @@ button {
   width: 180px;
   height: 40px;
   margin: 7px 0 !important;
-  background-color: $pink !important;
-  border: 1px solid $pink !important;
+  background-color: #2c2b2e !important;
+  border: 1px solid $white !important;
   color: $white !important;
 }
 
 header {
-  background-color: $lagoon;
-  color: $darkgrey;
-  border-bottom: 1px solid $pink;
+  background-color: $darkgrey;
+  color: $lagoon;
+  border-bottom: 1px solid $lagoon;
 
   .blackHeader {
+    display: flex;
+    align-items: center;
     padding: 5px 0 10px 0;
+
   }
 
   h1 {
     text-align: center;
-    color: $white;
     font-weight: bold;
     height: 50px;
+    width: auto;
     span {
       color: $pink;
     }
-  }
-
-  .connexion {
-    margin-top: 15px;
   }
 
   button {
@@ -177,7 +157,7 @@ li.parent {
     background-color: $darkgrey;
     transition: all 0.2s ease-in-out;
     &:hover {
-      background-color: $pink;
+      background-color: $lagoon;
       color: $white;
     }
   }
@@ -211,9 +191,11 @@ main {
   }
 
   nav {
+    background-color: #2c2b2e;
     padding: 20px;
     margin-top: 30px;
     color: $darkgrey;
+    border: 1px solid $lagoon;
 
     h2 {
       color: $lagoon;
@@ -223,7 +205,11 @@ main {
     }
 
     ul {
-      padding: 0;
+      color: $white;
+      height: 350px;
+      padding: 0 15px;
+      overflow: auto;
+      border-left: 1px dashed $lagoon;
     }
 
     li {
@@ -234,8 +220,8 @@ main {
       transition: all 0.1s ease-in-out;
       list-style: none;
       &:hover {
-        color: $white;
-        background-color: $pink;
+        color: $black;
+        background-color: $white;
       }
     }
   }
@@ -248,14 +234,26 @@ main {
     align-items: center;
     width: 100% !important;
     min-height: 100vh;
+    border: 1px solid $lagoon;
     h2 {
       margin-bottom: 30px;
-      color: $white;
+      color: $lagoon;
+      width: 100%;
+      text-align: center;
+      padding: 20px;
     }
     p, pre {
       margin-bottom: 25px;
       font-size: 1.2em;
       width: 80%;
+    }
+
+    a {
+      width: 80%;
+      color: $lagoon;
+    }
+    nav {
+      border: none;
     }
   }
 }
