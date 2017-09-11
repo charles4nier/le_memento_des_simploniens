@@ -1,2 +1,2 @@
 <?php
-  require "../../controller/edit.php";
+  require "../../controller/editArticle.php";

@@ -1,6 +1,7 @@
 let app = angular.module("myApp", []);
 
-app.controller("accessDataBase", function($scope, $http) {
+app.controller("accessDataBaseArticle", function($scope, $http) {
+
   $http.get("articles/index.php")
   .then(function(response) {
 
@@ -37,5 +38,14 @@ app.controller("accessDataBase", function($scope, $http) {
       }
     }
 
+  });
+});
+
+app.controller("accessDataBaseTag", function($scope, $http) {
+  $http.get("tags/index.php")
+  .then(function(response) {
+    console.log(response.data.tags[0]);
+
+    $scope.tags = response.data.tags;
   });
 });

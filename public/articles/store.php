@@ -1,3 +1,2 @@
 <?php
-
-  require "../../controller/create.php";
+  require "../../controller/createArticle.php";

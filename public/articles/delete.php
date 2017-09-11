@@ -1,2 +1,2 @@
 <?php
-  require "../../controller/delete.php";
+  require "../../controller/deleteArticle.php";

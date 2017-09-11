@@ -28,6 +28,7 @@ create table tag (
 drop table if exists tag_article;
 
 create table tag_article (
+  id_tag_article integer not null primary key auto_increment,
   id_article int not null,
   id_tag int not null,
   constraint foreign key (id_article) references article(id_article),

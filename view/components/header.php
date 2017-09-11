@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script type="text/javascript" src="js/controller.js"></script>
   </head>
-  <body ng-app="myApp" ng-controller="accessDataBase">
+  <body ng-app="myApp" ng-controller="accessDataBaseArticle">
     <div class="modalContent" id="openModal">
       <form class="myModal flexColumn perfectCenter" action="index.php" method="post">
         <p>Se connecter</p>
@@ -22,7 +22,7 @@
     </div>
     <header class="container-fluid">
       <div class="row blackHeader">
-        <div class="col-md-3 col-sm-12 flexColumn justifyCenter"><a href="../public/session/unset.php"><button type="button" name="button" class="btn btn-primary">Articles par tags</button></a></div>
+        <div class="col-md-3 col-sm-12 flexColumn justifyCenter"><a href="tags.php"><button type="button" name="button" class="btn btn-primary">Articles par tags</button></a></div>
         <h1 class="col-md-6 col-sm-12">Ressources utiles</h1>
         <div class="col-md-3 col-sm-12 flexColumn justifyCenter text-right">
           <?php
