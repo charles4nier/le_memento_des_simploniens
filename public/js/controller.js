@@ -2,6 +2,14 @@ let app = angular.module("myApp", []);
 
 app.controller("accessDataBaseArticle", function($scope, $http) {
 
+  $scope.show = false;
+  $scope.showTags = false;
+
+  $scope.showArticle = function() {
+    $scope.show = true;
+    $scope.showTags = false;
+  }
+
   $http.get("articles/index.php")
   .then(function(response) {
 

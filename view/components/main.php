@@ -1,5 +1,5 @@
 <main class="container">
-  <div class="row">
+  <div class="row" ng-show="!showTags">
     <form class="flexColumn perfectCenter" action="../public/articles/store.php" method="post" ng-show="show">
       <label for="tag">Tag :</label>
       <input type="text" name="tag" value="">
@@ -54,6 +54,11 @@
       <ul>
         <li ng-repeat="article in articles" ng-click="getIndex($event)">{{article.title}}</li>
       </ul>
+    </nav>
+  </div>
+  <div ng-show="showTags">
+    <nav class="tag_nav" n-app="myApp" ng-controller="accessDataBaseTag">
+      <p class="perfectCenter" ng-repeat="tag in tags"><a class="perfectCenter" href="tags/test.php?id_tag={{tag.id_tag}}">{{tag.tag_name}}</a></p>
     </nav>
   </div>
 </main>
