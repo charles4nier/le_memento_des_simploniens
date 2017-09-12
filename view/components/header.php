@@ -34,9 +34,7 @@
             if($adminConnected) {
           ?>
           <a class="col-xs-12"  href="../public/session/unset.php"><button type="button" name="button" class="btn btn-primary">Se déconnecter</button></a>
-          <a class="col-xs-12" href=""><button type="button" name="button" class="btn btn-primary" ng-click="displayCreateForm()" ng-hide="showEditForm">Nouvel article</button></a>
-
-          <a href=""><button type="button" name="button" class="btn btn-primary" ng-click="showEditForm = !showEditForm" ng-hide="!showEditForm">Retour à l'accueil</button></a>
+          <a class="col-xs-12" href=""><button type="button" name="button" class="btn btn-primary" ng-click="displayCreateForm()">Nouvel article</button></a>
           <?php
             } else {
           ?>

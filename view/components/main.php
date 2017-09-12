@@ -29,7 +29,7 @@
 
     <div class="col-md-offset-2 col-md-8 col-sm-12">
 
-      <article class="flexColumn justifySpaceBetween" ng-show="show" ng-hide="showEditForm">
+      <article class="flexColumn justifySpaceBetween" ng-show="show">
         <!--  pannel admin si l'admin est connecté-->
         <?php
           if($adminConnected == true)
@@ -37,7 +37,7 @@
         ?>
         <div class="boutonContainer flexRow justifySpaceBetween">
           <a href="../public/articles/delete.php?supprimer={{articles[length].id_article}}"><button type="button" name="button">Supprimer l'article</button></a>
-          <a href="" ng-click="showEditForm = !showEditForm"><button type="button" name="button">Editer l'article</button></a>
+          <a href="" ng-click="displayEditForm()"><button type="button" name="button">Editer l'article</button></a>
         </div>
         <?php
           }
@@ -59,7 +59,7 @@
     </div>
 
     <!--  menu latéral droit -->
-    <nav class="col-md-2 hidden-xs hidden-sm" ng-show="show" ng-hide="showEditForm">
+    <nav class="col-md-2 hidden-xs hidden-sm" ng-show="show">
       <h2 class="text-center">Tous les articles</h2>
       <ul>
         <li ng-repeat="article in articles" ng-click="getIndex($event)">{{article.title}}</li>

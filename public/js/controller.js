@@ -26,6 +26,14 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
     $scope.showEditForm = false;
   }
 
+  $scope.displayEditForm = function () {
+    $scope.show = false;
+    $scope.showTags = false;
+    $scope.showTagArticles = false;
+    $scope.showCreateForm = false;
+    $scope.showEditForm = true;
+  }
+
   $scope.loadArticles = function ($event) {
 
     $http.get("articles/index.php")
