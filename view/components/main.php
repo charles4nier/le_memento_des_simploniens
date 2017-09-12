@@ -37,7 +37,7 @@
         ?>
         <div class="boutonContainer">
           <a class="justifyFlexStart" href="../public/articles/delete.php?supprimer={{articles[length].id_article}}"><i class="material-icons">delete</i></a>
-          <a href="justifyFlexEnd" ng-click="displayEditForm()"><i class="material-icons">edit</i></a>
+          <a href="" ng-click="displayEditForm()"><i class="material-icons">edit</i></a>
         </div>
         <?php
           }
