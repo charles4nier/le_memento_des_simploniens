@@ -199,7 +199,7 @@ main {
 
 .myModal {
   margin: 0 auto;
-  background-color: #eeeeee;
+  background-color: #f1f1f1;
   padding: 20px 50px; }
   .myModal a {
     color: #ff5953; }
@@ -237,18 +237,34 @@ footer {
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
     transition: all .15s ease-out; }
     .tag_nav p:hover {
-      background-color: #2d2d2a; }
-  .tag_nav a {
-    position: absolute;
+      background-color: #2d2d2a;
+      color: white; }
+
+.tagArticleNav {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  border: none; }
+  .tagArticleNav div {
     display: flex;
-    width: 100%;
-    height: 100%;
-    color: #2d2d2a;
-    text-decoration: none;
-    transition: color .15s ease-out; }
-    .tag_nav a:hover {
-      color: white;
-      text-decoration: none; }
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    background-color: #f1f1f1;
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
+    padding: 0 10px 15px 10px; }
+    .tagArticleNav div p:first-child {
+      display: flex;
+      width: 90%;
+      height: 110px;
+      align-self: center;
+      justify-content: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #5eefb6; }
 
 @media all and (max-width: 500px) {
   button {

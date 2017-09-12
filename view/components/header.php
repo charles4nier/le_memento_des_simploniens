@@ -23,9 +23,9 @@
     <header class="container-fluid">
       <div class="row blackHeader">
         <div class="col-md-3 col-sm-12 flexColumn justifyCenter">
-          <button ng-show="!showTags" ng-click="showTags = !showTags" type="button" name="button" class="btn btn-primary">Articles par tags</button>
+          <button ng-show="show" ng-click="displayTag()" type="button" name="button" class="btn btn-primary">Articles par tags</button>
 
-          <button ng-show="showTags" ng-click="showTags = !showTags" type="button" name="button" class="btn btn-primary">Retour à l'accueil</button>
+          <button ng-show="!show" ng-click="showArticle()" type="button" name="button" class="btn btn-primary">Retour à l'accueil</button>
         </div>
 
         <h1 class="col-md-6 col-sm-12">Ressources utiles</h1>
@@ -34,7 +34,7 @@
             if($adminConnected) {
           ?>
           <a class="col-xs-12"  href="../public/session/unset.php"><button type="button" name="button" class="btn btn-primary">Se déconnecter</button></a>
-          <a class="col-xs-12" href=""><button type="button" name="button" class="btn btn-primary" ng-click="showArticle()" ng-hide="showEditForm">Nouvel article</button></a>
+          <a class="col-xs-12" href=""><button type="button" name="button" class="btn btn-primary" ng-click="displayCreateForm()" ng-hide="showEditForm">Nouvel article</button></a>
 
           <a href=""><button type="button" name="button" class="btn btn-primary" ng-click="showEditForm = !showEditForm" ng-hide="!showEditForm">Retour à l'accueil</button></a>
           <?php

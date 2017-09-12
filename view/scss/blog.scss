@@ -1,4 +1,4 @@
-$lightgrey: #eeeeee;
+$lightgrey: #f1f1f1;
 $pink: #ff5953;
 $lagoon: #5eefb6;
 $white: white;
@@ -331,20 +331,38 @@ footer {
       transition: all .15s ease-out;
       &:hover {
         background-color: $black;
+        color: white;
       }
     }
+}
 
-    a {
-      position: absolute;
+.tagArticleNav {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $white;
+  border: none;
+
+    div {
       display: flex;
-      width: 100%;
-      height: 100%;
-      color: $black;
-      text-decoration: none;
-      transition: color .15s ease-out;
-      &:hover {
-        color: white;
-        text-decoration: none;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      width: 300px;
+      height: 300px;
+      margin: 10px;
+      background-color: $lightgrey;
+      box-shadow: 4px 4px 2px rgba(0,0,0, .3);
+      padding: 0 10px 15px 10px;;
+
+      p:first-child {
+        display: flex;
+        width: 90%;
+        height: 110px;
+        align-self: center;
+        justify-content: center;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: $lagoon;
       }
     }
 }

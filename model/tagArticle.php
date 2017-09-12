@@ -4,13 +4,14 @@
   class tagArticle {
 
    /**
-    * getTags recovers all tags in the "tag" table
+    * getTags recovers all tags and titles in the "tag article" table
     * @return array including all the data coming from the targeted table
     */
-   public static function getTagArticle ($id_tag) {
+   public static function getTagArticles () {
      global $bdd;
 
-     $db = $bdd->query('SELECT * FROM tag_article WHERE id_tag =' .$id_tag);
+     $db = $bdd->query('SELECT article.title, tag.tag_name FROM article INNER JOIN tag_article ON article.id_article = tag_article.id_article INNER JOIN tag ON tag.id_tag = tag_article.id_tag');
+
      if($db === false) {
         return $db;
      }
