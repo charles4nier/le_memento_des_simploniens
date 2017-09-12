@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <title>Le mémento des Simploniens</title>
     <link rel="stylesheet" href="css/blog.css">
-    <link rel="stylesheet" href="css/filter.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script type="text/javascript" src="js/controller.js"></script>

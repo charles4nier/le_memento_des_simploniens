@@ -50,6 +50,13 @@ body {
   width: 100%;
   height: auto; }
 
+i {
+  display: flex;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  padding: 10px; }
+
 button {
   width: 180px;
   height: 40px;
@@ -119,7 +126,7 @@ main {
   align-items: flex-start;
   min-height: 100vh; }
   main form {
-    background-color: #ff5953;
+    background-color: #5eefb6;
     padding: 15px 10px;
     margin: 50px auto;
     width: 50%; }
@@ -181,8 +188,14 @@ main {
       border: none; }
 
 .boutonContainer {
+  display: flex;
   width: 100%;
   padding: 5px; }
+  .boutonContainer a {
+    display: flex;
+    justify-content: flex-start; }
+    .boutonContainer a:last-child {
+      justify-content: flex-end; }
 
 #openModal {
   position: absolute;

@@ -35,9 +35,9 @@
           if($adminConnected == true)
           {
         ?>
-        <div class="boutonContainer flexRow justifySpaceBetween">
-          <a href="../public/articles/delete.php?supprimer={{articles[length].id_article}}"><button type="button" name="button">Supprimer l'article</button></a>
-          <a href="" ng-click="displayEditForm()"><button type="button" name="button">Editer l'article</button></a>
+        <div class="boutonContainer">
+          <a class="justifyFlexStart" href="../public/articles/delete.php?supprimer={{articles[length].id_article}}"><i class="material-icons">delete</i></a>
+          <a href="justifyFlexEnd" ng-click="displayEditForm()"><i class="material-icons">edit</i></a>
         </div>
         <?php
           }
@@ -52,8 +52,8 @@
           </a>
         </div>
         <nav class="flexRow boutonContainer justifySpaceBetween">
-          <button type="button" name="button" ng-click="before()">before</button>
-          <button type="button" name="button" ng-click="after()">after</button>
+          <i class="material-icons perfectCenter" ng-click="before()">arrow_back</i>
+          <i class="material-icons perfectCenter" ng-click="after()">arrow_forward</i>
         </nav>
       </article>
     </div>

@@ -83,6 +83,14 @@ body {
   height: auto;
 }
 
+i {
+  display: flex;
+  border: 1px solid white;
+  color: $white;
+  cursor: pointer;
+  padding: 10px;
+}
+
 button {
   width: 180px;
   height: 40px;
@@ -175,7 +183,7 @@ main {
   min-height: 100vh;
 
   form {
-    background-color: $pink;
+    background-color: $lagoon;
     padding: 15px 10px;
     margin: 50px auto;
     width: 50%;
@@ -259,9 +267,17 @@ main {
 }
 
 .boutonContainer {
+  display: flex;
   width: 100%;
-
   padding: 5px;
+
+  a {
+    display: flex;
+    justify-content: flex-start;
+    &:last-child {
+      justify-content: flex-end;
+    }
+  }
 }
 
 
