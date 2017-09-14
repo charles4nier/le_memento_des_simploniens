@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Le mémento des Simploniens</title>
     <link rel="stylesheet" href="css/blog.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -21,23 +22,21 @@
     </div>
     <header class="container-fluid">
       <div class="row blackHeader">
-        <h1 class="col-md-4 col-sm-12"><img src="image/logo.png" width="40px" alt="">Le mémento des simploniens</h1>
-        <div class="col-md-offset-4 col-md-3 col-sm-12 flexRow justifyCenter text-right">
-          <i ng-show="show" ng-click="displayTag()" class="material-icons">search</i>
-
-          <i ng-show="!show" ng-click="showArticle()" type="button" class="material-icons">home</i>
+        <h1 class="col-md-4 col-sm-12" ng-click="showArticle()"><img src="image/logo.png" width="40px" alt="">Le mémento des simploniens</h1>
+        <nav class="col-md-offset-4 col-md-3 col-sm-12 flexRow justifyCenter text-right">
+          <i ng-click="displayTag()" class="material-icons">search</i>
           <?php
             if($adminConnected) {
           ?>
           <i class="material-icons" ng-click="displayCreateForm()">add</i>
-          <a class="col-xs-12"  href="../public/session/unset.php"><button type="button" name="button" class="btn btn-primary">Se déconnecter</button></a>
+          <a class="col-xs-12 connexion"  href="../public/session/unset.php">Se déconnecter</a>
           <?php
             } else {
           ?>
-            <a class="col-xs-12 connexion" href="#openModal"><button type="button" name="button" class="btn btn-primary">Se connecter</button></a>
+            <a class="col-xs-12 connexion" href="#openModal">Se connecter</a>
           <?php
             }
           ?>
-        </div>
+        </nav>
       </div>
     </header>

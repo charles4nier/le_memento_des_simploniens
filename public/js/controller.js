@@ -80,7 +80,6 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
         for(let i = 0; i < $scope.articles.length; i++) {
           if($scope.articles[i].title == title) {
             $scope.length = i;
-            // alert(title + i);
             $scope.showArticle();
           }
         }

@@ -58,14 +58,23 @@ i {
   padding: 10px;
   background-color: white; }
 
-button {
+.connexion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 180px;
-  height: 40px;
-  margin: 7px 0 !important;
-  background-color: white !important;
-  border: 1px solid #dee0df !important;
-  color: #525252 !important;
-  font-weight: bold; }
+  height: 46px;
+  margin: 0 10px;
+  background-color: white;
+  border: 1px solid #dee0df;
+  color: #525252; }
+
+i, .connexion {
+  transition: all ease-out .1s; }
+  i:hover, .connexion:hover {
+    background-color: #fe0000;
+    color: white;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); }
 
 header {
   background-color: white;
@@ -85,6 +94,7 @@ header {
   header .blackHeader {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     padding: 5px 0 10px 0; }
   header h1 {
     display: flex;
@@ -95,7 +105,8 @@ header {
     margin: 0;
     font-size: 1.5em;
     font-weight: bold;
-    border-right: 1px solid #dee0df; }
+    border-right: 1px solid #dee0df;
+    cursor: pointer; }
     header h1 img {
       height: 35px;
       width: 35px;
@@ -104,7 +115,6 @@ header {
     padding-bottom: 10px !important;
     border-radius: 0 !important; }
   header nav {
-    background-color: #525252;
     padding: 5px 0; }
   header input {
     width: 250px; }
@@ -146,12 +156,43 @@ main {
   align-items: flex-start;
   height: 100vh; }
   main form {
-    background-color: #5eefb6;
-    padding: 15px 10px;
+    background-color: white;
+    padding: 25px 10px;
     margin: 50px auto;
-    width: 50%; }
+    width: 50%;
+    border: 1px solid #dee0df; }
+    main form .inputcontainer {
+      position: relative;
+      margin-bottom: 40px; }
+    main form .floating-label {
+      position: absolute;
+      top: 5px;
+      left: 2px;
+      color: #dee0df;
+      transition: all 0.2s ease-in-out;
+      pointer-events: none; }
+    main form input[type=text], main form input[type=mail], main form input[type=password], main form input[type=number], main form input[type=tel], main form textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #dee0df;
+      padding: 5px 0 5px 5px;
+      color: #525252;
+      width: 350px;
+      transition: all 0.2s ease-in-out;
+      letter-spacing: 0.05em; }
+    main form input[type=radio] {
+      margin-right: 5px; }
+    main form input[type=radio]:checked {
+      background-color: #06172d; }
+    main form input:focus {
+      border-bottom: 1px solid #525252;
+      color: #06172d; }
+    main form input:focus ~ .floating-label, main form textarea:focus ~ .floating-label {
+      color: #525252;
+      top: -15px;
+      font-size: 11px; }
   main textarea {
-    resize: none; }
+    height: 40px; }
   main input, main textarea {
     margin-bottom: 15px;
     width: 350px; }
@@ -173,6 +214,9 @@ main {
       padding: 0 15px;
       overflow: auto; }
     main nav li {
+      display: flex;
+      align-items: center;
+      height: 50px;
       margin-left: 5px;
       margin-bottom: 5px;
       cursor: pointer;
@@ -180,15 +224,16 @@ main {
       transition: all 0.1s ease-in-out;
       list-style: none; }
       main nav li:hover {
-        color: #2d2d2a;
-        background-color: white; }
+        color: white;
+        background-color: #fe0000;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); }
   main article {
     background-color: #f1f1f1;
     color: #525252;
     padding: 10px 15px;
     margin-top: 35px;
     align-items: center;
-    width: 80% !important;
+    width: 80%;
     min-height: 500px; }
     main article h2 {
       margin-bottom: 30px;
@@ -203,6 +248,8 @@ main {
     main article a {
       width: 80%;
       color: #fe0000; }
+      main article a:hover {
+        text-decoration: none; }
     main article nav {
       border: none; }
 
@@ -270,7 +317,7 @@ footer {
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
     transition: all .15s ease-out; }
     .tag_nav p:hover {
-      background-color: #2d2d2a;
+      background-color: #fe0000;
       color: white; }
 
 .tagArticleNav {
@@ -284,37 +331,59 @@ footer {
     justify-content: flex-end;
     align-items: center;
     width: 300px;
-    height: 300px;
+    height: 250px;
     margin: 10px;
     background-color: white;
-    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
-    padding: 0 10px 15px 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    padding: 0 10px 25px 10px;
     border: 1px solid #dee0df; }
     .tagArticleNav div p:first-child {
       display: flex;
       width: 90%;
-      height: 110px;
+      height: 60px;
       align-self: center;
       justify-content: center;
       font-size: 1.5em;
       font-weight: bold; }
     .tagArticleNav div button {
-      background-color: #fe0000 !important;
-      color: white !important; }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 180px;
+      height: 46px;
+      margin-bottom: 10px;
+      background-color: #525252;
+      border: 1px solid #dee0df;
+      color: white;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); }
 
 @media all and (max-width: 700px) {
   body {
-    height: 650px;
+    min-height: 650px;
     overflow: scroll; }
 
-  article {
-    min-height: 350px; }
+  header {
+    border: none; }
+    header h1 {
+      border-right: none; }
+    header nav {
+      width: 100vw;
+      margin-top: 15px;
+      background-color: #525252; }
+    header .connexion {
+      width: 150px; }
 
-  button {
-    width: 140px; }
+  main {
+    padding: 0; }
+    main .test {
+      padding: 0; }
 
-  header ul {
-    flex-direction: column !important; }
+  main article {
+    min-height: 250px;
+    width: 100vw !important; }
+
+  .articleContainer {
+    width: 100%; }
 
   li.parent:hover ul {
     display: block;
@@ -322,6 +391,10 @@ footer {
     left: 100px; }
 
   form {
-    width: 100% !important; } }
+    width: 100% !important;
+    padding: 20px 0;
+    border: none; }
+    form input[type=text], form input[type=mail], form input[type=password], form input[type=number], form input[type=tel], form textarea {
+      width: 100vw; } }
 
 /*# sourceMappingURL=blog.css.map */

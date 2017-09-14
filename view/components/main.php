@@ -1,32 +1,49 @@
 <main class="container">
-  <div class="row articleContainer">
+  <div class="row">
     <!-- Formulaire de création d'article -->
     <form class="flexColumn perfectCenter" action="../public/articles/store.php" method="post" ng-show="showCreateForm">
-      <label for="tag">Tag :</label>
-      <input type="text" name="tag" value="">
-      <label for="title">Title :</label>
-      <input type="text" name="title" value="">
-      <label for="content">Content :</label>
-      <textarea name="content" rows="8"></textarea>
-      <label for="link"><link rel="stylesheet" href="/css/master.css">Url :</label>
-      <input type="text" name="link" value="">
-      <input type="submit" name="submit" value="Envoyer">
+      <div class="inputcontainer">
+        <input type="text" name="tag" value="" required>
+        <label class="floating-label" for="title">Tag :</label>
+      </div>
+      <div class="inputcontainer">
+        <input type="text" class="inputText" name="title" required/>
+        <label class="floating-label" for="title">Titre :</label>
+      </div>
+      <div class="inputcontainer">
+        <textarea name="content" rows="8" required></textarea>
+        <label class="floating-label" for="content">Contenu :</label>
+      </div>
+      <div class="inputcontainer">
+        <input type="text" class="inputText" name="link" required/>
+        <label class="floating-label" for="link">Lien :</label>
+      </div>
+      <input class="connexion" type="submit" name="submit" value="Envoyer">
     </form>
 
     <!-- Formulaire d'édition d'article -->
     <form class="flexColumn perfectCenter" action="../public/articles/update.php" method="post" ng-show="showEditForm">
       <input type="hidden" name="id_article" value="{{articles[length].id_article}}">
-      <label for="tag">Tag :</label>
-      <input type="text" name="tag" value="{{articles[length].type}}">
-      <label for="title">Title :</label>
-      <input type="text" name="title" value="{{articles[length].title}}">
-      <label for="content">Content :</label>
-      <textarea name="content" rows="8" cols="80">{{articles[length].content}}</textarea>
-      <label for="link">Url :</label>
-      <input type="text" name="link" value="{{articles[length].link}}">
-      <input type="submit" name="submit" value="Envoyer">
+      <div class="inputcontainer">
+        <input type="text" name="tag" value="{{articles[length].type}}" required>
+        <label class="floating-label" for="title">Tag :</label>
+      </div>
+      <div class="inputcontainer">
+        <input type="text" name="title" value="{{articles[length].title}}" required/>
+        <label class="floating-label" for="title">Titre :</label>
+      </div>
+      <div class="inputcontainer">
+        <textarea name="content" rows="8" required>{{articles[length].content}}</textarea>
+        <label class="floating-label" for="content">Contenu :</label>
+      </div>
+      <div class="inputcontainer">
+        <input type="text" name="link" value="{{articles[length].link}}" required>
+        <label class="floating-label" for="link">Lien :</label>
+      </div>
+      <input class="connexion" type="submit" name="submit" value="Envoyer">
     </form>
-
+  </div>
+  <div class="row articleContainer" ng-show="show">
     <!--  menu latéral droit -->
     <nav class="col-md-3 hidden-xs hidden-sm" ng-show="show">
       <h2 class="text-center">Tous les articles</h2>
@@ -35,7 +52,7 @@
       </ul>
     </nav>
 
-    <div class="col-md-offset-1 col-md-8 col-sm-12">
+    <div class="test col-md-offset-1 col-md-8 col-sm-12">
 
       <article class="flexColumn justifySpaceBetween" ng-show="show">
         <!--  pannel admin si l'admin est connecté-->
@@ -79,7 +96,7 @@
     <nav class="tagArticleNav perfectCenter">
       <div class="card" ng-repeat="dataTagArticle in dataTagArticles">
         <p>{{dataTagArticle.tag_article_title}}</p>
-        <button data-title="{{dataTagArticle.tag_article_title}}" ng-click="getTitle($event)"> Allez voir l'article </button>
+        <button class="connexion" data-title="{{dataTagArticle.tag_article_title}}" ng-click="getTitle($event)"> Voir l'article </button>
         <p><span>Catégorie :</span> {{dataTagArticle.tag_article_name}}</p>
       </div>
     </nav>
