@@ -1,26 +1,25 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
+  header("Access-Control-Allow-Origin: *");
+  header("Content-Type: application/json; charset=UTF-8");
 ?>
-{
-  "articles" : [
+  {
+    "articles" : [
 <?php
-$first = true;
+  $first = true;
 
-foreach ($articles as $article) {
-  if (!$first) {
-    echo ",\n";
+  foreach ($articles as $article) {
+    if (!$first) {
+      echo ",\n";
+    }
+?>
+      {
+        "id_article" : "<?= $article["id_article"] ?>",
+        "title" : "<?= $article["title"] ?>",
+        "content" : "<?= trim(preg_replace('/\s\s+/', '', $article["content"])) ?>",
+        "link" : "<?= $article["link"] ?>"
+      }<?php
+    $first = false;
   }
 ?>
-    {
-      "id_article" : "<?= $article["id_article"] ?>",
-      "title" : "<?= $article["title"] ?>",
-      "content" : "<?= trim(preg_replace('/\s\s+/', '', $article["content"])) ?>",
-      "link" : "<?= $article["link"] ?>"
-    }<?php
-  $first = false;
-}
-?>
-
   ]
 }

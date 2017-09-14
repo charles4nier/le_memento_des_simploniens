@@ -16,4 +16,4 @@ INSERT INTO `article` (`id_user`,`title`, `content`, `link`) VALUES
 INSERT INTO `tag` (`tag_name`) VALUES
 ('HTML'), ('CSS'), ('JS'), ('PHP'), ('Design'), ('Maquette'), ('VueJS'), ('ReactJs'), ('Test'), ('Laravel'), ('Tutos'), ('API');
 
-INSERT INTO `tag_article` (`id_article`, `id_tag`) VALUES (1, 3), (1, 8), (1, 11), (2, 2), (3, 2), (4, 3), (4,9), (5, 4), (5, 10), (5, 11), (6, 3), (7, 5), (7, 6), (8, 4), (8, 10), (8, 11), (8, 12), (9, 3), (9, 7), (9, 11);
+INSERT INTO `tag_article` (`id_article`, `id_tag`) VALUES (1, 3), (1, 8), (1, 11), (2, 2), (3, 2), (4, 3), (4,9), (5, 10), (6, 4), (6, 10), (6, 11), (7, 3), (8, 5), (8, 6), (8, 10), (9, 4), (9, 10), (9, 11), (10, 3), (10, 7), (10, 10);

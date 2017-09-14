@@ -1,5 +1,5 @@
 <main class="container">
-  <div class="row">
+  <div class="row articleContainer">
     <!-- Formulaire de création d'article -->
     <form class="flexColumn perfectCenter" action="../public/articles/store.php" method="post" ng-show="showCreateForm">
       <label for="tag">Tag :</label>
@@ -27,7 +27,15 @@
       <input type="submit" name="submit" value="Envoyer">
     </form>
 
-    <div class="col-md-offset-2 col-md-8 col-sm-12">
+    <!--  menu latéral droit -->
+    <nav class="col-md-3 hidden-xs hidden-sm" ng-show="show">
+      <h2 class="text-center">Tous les articles</h2>
+      <ul>
+        <li ng-repeat="article in articles" ng-click="getIndex($event)">{{article.title}}</li>
+      </ul>
+    </nav>
+
+    <div class="col-md-offset-1 col-md-8 col-sm-12">
 
       <article class="flexColumn justifySpaceBetween" ng-show="show">
         <!--  pannel admin si l'admin est connecté-->
@@ -57,14 +65,6 @@
         </nav>
       </article>
     </div>
-
-    <!--  menu latéral droit -->
-    <nav class="col-md-2 hidden-xs hidden-sm" ng-show="show">
-      <h2 class="text-center">Tous les articles</h2>
-      <ul>
-        <li ng-repeat="article in articles" ng-click="getIndex($event)">{{article.title}}</li>
-      </ul>
-    </nav>
   </div>
 
   <!--  page des tags -->

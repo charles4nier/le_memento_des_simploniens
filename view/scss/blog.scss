@@ -3,8 +3,9 @@ $pink: #ff5953;
 $lagoon: #5eefb6;
 $white: white;
 $black: #2d2d2a;
-$darkgrey: #272629;
-$orange : $lagoon;
+$darkgrey: #525252;
+$grey: #dee0df;
+$red : #fe0000;
 
 // @mixin rounded-corners {
 //   border-radius: 3px;
@@ -85,40 +86,66 @@ body {
 
 i {
   display: flex;
-  border: 1px solid white;
-  color: $white;
+  border: 1px solid $grey;
+  color: $darkgrey;
   cursor: pointer;
   padding: 10px;
+  background-color: $white;
 }
 
 button {
   width: 180px;
   height: 40px;
   margin: 7px 0 !important;
-  background-color: #2c2b2e !important;
-  border: 1px solid $white !important;
-  color: $white !important;
+  background-color: $white !important;
+  border: 1px solid $grey !important;
+  color: $darkgrey !important;
+  font-weight: bold;
 }
 
 header {
-  background-color: $darkgrey;
-  color: $lagoon;
-  border-bottom: 1px solid $lagoon;
+  background-color: $white;
+  border-bottom: 1px solid $grey;
+
+  a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 !important;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  a, i {
+    height: 46px;
+    margin-left: 15px;
+  }
+
+  button {
+    height: 100%;
+  }
 
   .blackHeader {
     display: flex;
     align-items: center;
     padding: 5px 0 10px 0;
-
   }
 
   h1 {
-    text-align: center;
-    font-weight: bold;
+    display: flex;
     height: 50px;
-    width: auto;
-    span {
-      color: $pink;
+    justify-content: center;
+    align-items: center;
+    color: $darkgrey;
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-right: 1px solid $grey;
+    img {
+      height: 35px;
+      width: 35px;
+      margin-right: 10px;
     }
   }
 
@@ -180,7 +207,7 @@ li.parent:hover {
 main {
   background-color: $white;
   align-items: flex-start;
-  min-height: 100vh;
+  height: 100vh;
 
   form {
     background-color: $lagoon;
@@ -198,26 +225,28 @@ main {
     width: 350px;
   }
 
-  nav {
-    background-color: #2c2b2e;
-    padding: 20px;
-    margin-top: 30px;
-    color: $darkgrey;
-    border: 1px solid $lagoon;
+  .articleContainer {
+    height: 100%;
+  }
 
+  nav {
+    height: 100%;
+    padding: 0 20px;
+    margin-top: 12px;
+    color: $darkgrey;
+    border-right: 1px solid $grey;
     h2 {
-      color: $lagoon;
+      color: $red;
       font-size: 1.6em;
-      margin-bottom: 15px;
+      margin: 35px 0 25px 0;
       font-weight: bold;
     }
 
     ul {
-      color: $white;
-      height: 350px;
+      color: $darkgrey;
       padding: 0 15px;
       overflow: auto;
-      border-left: 1px dashed $lagoon;
+      // border-left: 1px dashed $red;
     }
 
     li {
@@ -235,17 +264,16 @@ main {
   }
 
   article {
-    background-color: $darkgrey;
-    color: $white;
+    background-color: $lightgrey;
+    color: $darkgrey;
     padding: 10px 15px;
-    margin-top: 30px;
+    margin-top: 35px;
     align-items: center;
-    width: 100% !important;
-    min-height: 100vh;
-    border: 1px solid $lagoon;
+    width: 80% !important;
+    min-height: 500px;
     h2 {
       margin-bottom: 30px;
-      color: $lagoon;
+      color: $darkgrey;
       width: 100%;
       text-align: center;
       padding: 20px;
@@ -258,7 +286,7 @@ main {
 
     a {
       width: 80%;
-      color: $lagoon;
+      color: $red;
     }
     nav {
       border: none;
@@ -324,7 +352,7 @@ main {
 }
 
 footer {
-  background-color: $darkgrey;
+  background-color: $grey;
   margin-top: 30px;
   height: 80px;
 }
@@ -332,7 +360,7 @@ footer {
 .tag_nav {
   display: flex;
   flex-wrap: wrap;
-  background-color: white;
+  background-color: $white;
   border: none;
 
     p {
@@ -340,14 +368,15 @@ footer {
       display: flex;
       width: 200px;
       height: 50px;
-      background-color: $lagoon;
+      background-color: $white;
       margin: 10px;
       cursor: pointer;
+      border: 1px solid $grey;
       box-shadow: 2px 2px 2px rgba(0,0,0, .3);
       transition: all .15s ease-out;
       &:hover {
         background-color: $black;
-        color: white;
+        color: $white;
       }
     }
 }
@@ -366,10 +395,10 @@ footer {
       width: 300px;
       height: 300px;
       margin: 10px;
-      background-color: $lightgrey;
+      background-color: $white;
       box-shadow: 4px 4px 2px rgba(0,0,0, .3);
-      padding: 0 10px 15px 10px;;
-
+      padding: 0 10px 15px 10px;
+      border: 1px solid $grey;
       p:first-child {
         display: flex;
         width: 90%;
@@ -378,15 +407,26 @@ footer {
         justify-content: center;
         font-size: 1.5em;
         font-weight: bold;
-        color: $lagoon;
+      }
+      button {
+        background-color: $red !important;
+        color: $white !important;
       }
     }
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 700px) {
+    body {
+      height: 650px;
+      overflow: scroll;
+    }
+
+    article {
+      min-height: 350px;
+    }
 
     button {
-      width: 140px !important;
+      width: 140px;
     }
 
     header {

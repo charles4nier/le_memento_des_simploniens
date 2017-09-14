@@ -21,19 +21,16 @@
     </div>
     <header class="container-fluid">
       <div class="row blackHeader">
-        <div class="col-md-3 col-sm-12 flexColumn justifyCenter">
-          <button ng-show="show" ng-click="displayTag()" type="button" name="button" class="btn btn-primary">Articles par tags</button>
+        <h1 class="col-md-4 col-sm-12"><img src="image/logo.png" width="40px" alt="">Le mémento des simploniens</h1>
+        <div class="col-md-offset-4 col-md-3 col-sm-12 flexRow justifyCenter text-right">
+          <i ng-show="show" ng-click="displayTag()" class="material-icons">search</i>
 
-          <button ng-show="!show" ng-click="showArticle()" type="button" name="button" class="btn btn-primary">Retour à l'accueil</button>
-        </div>
-
-        <h1 class="col-md-6 col-sm-12">Ressources utiles</h1>
-        <div class="col-md-3 col-sm-12 flexColumn justifyCenter text-right">
+          <i ng-show="!show" ng-click="showArticle()" type="button" class="material-icons">home</i>
           <?php
             if($adminConnected) {
           ?>
+          <i class="material-icons" ng-click="displayCreateForm()">add</i>
           <a class="col-xs-12"  href="../public/session/unset.php"><button type="button" name="button" class="btn btn-primary">Se déconnecter</button></a>
-          <a class="col-xs-12" href=""><button type="button" name="button" class="btn btn-primary" ng-click="displayCreateForm()">Nouvel article</button></a>
           <?php
             } else {
           ?>

@@ -52,39 +52,59 @@ body {
 
 i {
   display: flex;
-  border: 1px solid white;
-  color: white;
+  border: 1px solid #dee0df;
+  color: #525252;
   cursor: pointer;
-  padding: 10px; }
+  padding: 10px;
+  background-color: white; }
 
 button {
   width: 180px;
   height: 40px;
   margin: 7px 0 !important;
-  background-color: #2c2b2e !important;
-  border: 1px solid white !important;
-  color: white !important; }
+  background-color: white !important;
+  border: 1px solid #dee0df !important;
+  color: #525252 !important;
+  font-weight: bold; }
 
 header {
-  background-color: #272629;
-  color: #5eefb6;
-  border-bottom: 1px solid #5eefb6; }
+  background-color: white;
+  border-bottom: 1px solid #dee0df; }
+  header a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 !important; }
+    header a:hover {
+      text-decoration: none; }
+  header a, header i {
+    height: 46px;
+    margin-left: 15px; }
+  header button {
+    height: 100%; }
   header .blackHeader {
     display: flex;
     align-items: center;
     padding: 5px 0 10px 0; }
   header h1 {
-    text-align: center;
-    font-weight: bold;
+    display: flex;
     height: 50px;
-    width: auto; }
-    header h1 span {
-      color: #ff5953; }
+    justify-content: center;
+    align-items: center;
+    color: #525252;
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-right: 1px solid #dee0df; }
+    header h1 img {
+      height: 35px;
+      width: 35px;
+      margin-right: 10px; }
   header button {
     padding-bottom: 10px !important;
     border-radius: 0 !important; }
   header nav {
-    background-color: #272629;
+    background-color: #525252;
     padding: 5px 0; }
   header input {
     width: 250px; }
@@ -101,7 +121,7 @@ li.parent {
   text-align: center; }
   li.parent:hover {
     background-color: #5eefb6;
-    color: #272629; }
+    color: #525252; }
   li.parent ul {
     display: none;
     padding-left: 0;
@@ -112,7 +132,7 @@ li.parent {
     list-style-type: none;
     color: white;
     padding: 5px;
-    background-color: #272629;
+    background-color: #525252;
     transition: all 0.2s ease-in-out; }
     li.parent li:hover {
       background-color: #5eefb6;
@@ -124,7 +144,7 @@ li.parent:hover ul {
 main {
   background-color: white;
   align-items: flex-start;
-  min-height: 100vh; }
+  height: 100vh; }
   main form {
     background-color: #5eefb6;
     padding: 15px 10px;
@@ -135,23 +155,23 @@ main {
   main input, main textarea {
     margin-bottom: 15px;
     width: 350px; }
+  main .articleContainer {
+    height: 100%; }
   main nav {
-    background-color: #2c2b2e;
-    padding: 20px;
-    margin-top: 30px;
-    color: #272629;
-    border: 1px solid #5eefb6; }
+    height: 100%;
+    padding: 0 20px;
+    margin-top: 12px;
+    color: #525252;
+    border-right: 1px solid #dee0df; }
     main nav h2 {
-      color: #5eefb6;
+      color: #fe0000;
       font-size: 1.6em;
-      margin-bottom: 15px;
+      margin: 35px 0 25px 0;
       font-weight: bold; }
     main nav ul {
-      color: white;
-      height: 350px;
+      color: #525252;
       padding: 0 15px;
-      overflow: auto;
-      border-left: 1px dashed #5eefb6; }
+      overflow: auto; }
     main nav li {
       margin-left: 5px;
       margin-bottom: 5px;
@@ -163,17 +183,16 @@ main {
         color: #2d2d2a;
         background-color: white; }
   main article {
-    background-color: #272629;
-    color: white;
+    background-color: #f1f1f1;
+    color: #525252;
     padding: 10px 15px;
-    margin-top: 30px;
+    margin-top: 35px;
     align-items: center;
-    width: 100% !important;
-    min-height: 100vh;
-    border: 1px solid #5eefb6; }
+    width: 80% !important;
+    min-height: 500px; }
     main article h2 {
       margin-bottom: 30px;
-      color: #5eefb6;
+      color: #525252;
       width: 100%;
       text-align: center;
       padding: 20px; }
@@ -183,7 +202,7 @@ main {
       width: 80%; }
     main article a {
       width: 80%;
-      color: #5eefb6; }
+      color: #fe0000; }
     main article nav {
       border: none; }
 
@@ -230,7 +249,7 @@ main {
   display: flex; }
 
 footer {
-  background-color: #272629;
+  background-color: #dee0df;
   margin-top: 30px;
   height: 80px; }
 
@@ -244,9 +263,10 @@ footer {
     display: flex;
     width: 200px;
     height: 50px;
-    background-color: #5eefb6;
+    background-color: white;
     margin: 10px;
     cursor: pointer;
+    border: 1px solid #dee0df;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
     transition: all .15s ease-out; }
     .tag_nav p:hover {
@@ -266,9 +286,10 @@ footer {
     width: 300px;
     height: 300px;
     margin: 10px;
-    background-color: #f1f1f1;
+    background-color: white;
     box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
-    padding: 0 10px 15px 10px; }
+    padding: 0 10px 15px 10px;
+    border: 1px solid #dee0df; }
     .tagArticleNav div p:first-child {
       display: flex;
       width: 90%;
@@ -276,12 +297,21 @@ footer {
       align-self: center;
       justify-content: center;
       font-size: 1.5em;
-      font-weight: bold;
-      color: #5eefb6; }
+      font-weight: bold; }
+    .tagArticleNav div button {
+      background-color: #fe0000 !important;
+      color: white !important; }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 700px) {
+  body {
+    height: 650px;
+    overflow: scroll; }
+
+  article {
+    min-height: 350px; }
+
   button {
-    width: 140px !important; }
+    width: 140px; }
 
   header ul {
     flex-direction: column !important; }
