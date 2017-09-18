@@ -272,6 +272,55 @@ main {
       top: -15px;
       font-size: 11px;
     }
+
+    .tagContainerParent {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;;
+      .roundIcon {
+        font-size: 10px;
+      }
+    }
+
+    .tagContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      padding: 10px 0;
+      margin: 5px;
+      border: 1px solid $grey;
+      cursor: pointer;
+      label {
+        font-size: 13px;
+        margin: 0 5px 0 0;
+        color: $darkgrey;
+      }
+      input[type=checkbox] {
+        width: 15px;
+        margin: 0;
+      }
+    }
+
+    .checked {
+      background-color: red;
+      label {
+        color: white;
+      }
+    }
+
+    .addTagContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      input {
+        transform: scaleX(0);
+      }
+    }
   }
 
   textarea {
@@ -290,11 +339,12 @@ main {
   }
 
   nav {
-    height: 100%;
+    height: 90%;
     padding: 0 20px;
     margin-top: 12px;
     color: $darkgrey;
     border-right: 1px solid $grey;
+    overflow-y: scroll;
     h2 {
       color: $red;
       font-size: 1.6em;
@@ -426,10 +476,11 @@ footer {
 
 .tag_nav {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   background-color: $white;
   border: none;
-
+  overflow: visible;
     p {
       position: relative;
       display: flex;

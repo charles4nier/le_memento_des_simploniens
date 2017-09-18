@@ -2,9 +2,15 @@
   <div class="row">
     <!-- Formulaire de création d'article -->
     <form class="flexColumn perfectCenter" action="../public/articles/store.php" method="post" ng-show="showCreateForm">
-      <div class="inputcontainer">
-        <input type="text" name="tag" value="" required>
-        <label class="floating-label" for="title">Tag :</label>
+      <div class="inputContainer tagContainerParent">
+        <div class="tagContainer" ng-repeat="tag in tags" ng-click="check($event)">
+          <label for="{{tag.id_tag}}">{{tag.tag_name}}</label>
+          <input type="hidden" name="{{tag.id_tag}}" value="{{tag.tag_name}}">
+        </div>
+        <div class="addTagContainer">
+          <input type="text" name="" value="" class="test">
+          <i class="material-icons roundIcon">add</i>
+        </div>
       </div>
       <div class="inputcontainer">
         <input type="text" class="inputText" name="title" required/>

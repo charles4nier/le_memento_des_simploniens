@@ -191,6 +191,42 @@ main {
       color: #525252;
       top: -15px;
       font-size: 11px; }
+    main form .tagContainerParent {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px; }
+      main form .tagContainerParent .roundIcon {
+        font-size: 10px; }
+    main form .tagContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      padding: 10px 0;
+      margin: 5px;
+      border: 1px solid #dee0df;
+      cursor: pointer; }
+      main form .tagContainer label {
+        font-size: 13px;
+        margin: 0 5px 0 0;
+        color: #525252; }
+      main form .tagContainer input[type=checkbox] {
+        width: 15px;
+        margin: 0; }
+    main form .checked {
+      background-color: red; }
+      main form .checked label {
+        color: white; }
+    main form .addTagContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%; }
+      main form .addTagContainer input {
+        transform: scaleX(0); }
   main textarea {
     height: 40px; }
   main input, main textarea {
@@ -199,11 +235,12 @@ main {
   main .articleContainer {
     height: 100%; }
   main nav {
-    height: 100%;
+    height: 90%;
     padding: 0 20px;
     margin-top: 12px;
     color: #525252;
-    border-right: 1px solid #dee0df; }
+    border-right: 1px solid #dee0df;
+    overflow-y: scroll; }
     main nav h2 {
       color: #fe0000;
       font-size: 1.6em;
@@ -302,9 +339,11 @@ footer {
 
 .tag_nav {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   background-color: white;
-  border: none; }
+  border: none;
+  overflow: visible; }
   .tag_nav p {
     position: relative;
     display: flex;

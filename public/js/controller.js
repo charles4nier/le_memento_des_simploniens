@@ -24,6 +24,11 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
     $scope.showTagArticles = false;
     $scope.showCreateForm = true;
     $scope.showEditForm = false;
+
+    $http.get("tags/index.php")
+    .then(function(response) {
+      $scope.tags = response.data.tags;
+    });
   }
 
   $scope.displayEditForm = function () {
@@ -123,6 +128,16 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
         $scope.showCreateForm = false;
         $scope.showEditForm = false;
     });
+  }
+
+  $scope.check = function ($event) {
+    if($event.target.childNodes[3].hasAttribute('checked')) {
+      $event.target.classList.remove('checked');
+      $event.target.childNodes[3].removeAttribute('checked');
+    } else {
+      $event.target.childNodes[3].setAttribute('checked', 'true ');
+      $event.target.classList.add('checked');
+    }
   }
 
   $scope.loadArticles();
