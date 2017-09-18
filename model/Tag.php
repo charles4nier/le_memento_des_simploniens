@@ -16,4 +16,19 @@
      }
      return $db->fetchAll();
    }
+
+   /**
+    * createTag creates and stores an article into the targeted table
+    * @param string $id_tag : the tag's id
+    * @param string $tag_name : the tag's name
+    */
+   public static function createTag ($tag_name) {
+     global $bdd;
+
+     $req =  $bdd->prepare('INSERT INTO tag (tag_name) VALUES (:tag_name)');
+
+     $req->execute(array(
+       'tag_name' => $tag_name
+     ));
+   }
  }

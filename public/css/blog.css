@@ -200,6 +200,11 @@ main {
       margin-bottom: 30px; }
       main form .tagContainerParent .roundIcon {
         font-size: 10px; }
+    main form .tagsContainer {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center; }
     main form .tagContainer {
       display: flex;
       justify-content: center;
@@ -228,7 +233,7 @@ main {
       main form .addTagContainer input {
         transform: scaleX(0);
         transform-origin: left;
-        transition: all .1s ease-out;
+        transition: all .35s ease-out;
         margin: 6px 15px 0 45px; }
       main form .addTagContainer .isVisible {
         transform: scaleX(1); }

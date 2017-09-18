@@ -9,8 +9,8 @@ if(isset($_POST['id_article']) || isset($_POST['title']) || isset($_POST['conten
   $link = $_POST['link'];
 }
 
-// for($i = 1; $i < tag_count; ++$i) {
-//   if(isset($_POST['tag'.$i])) {
-//     $tags[$i] = $_POST['tag'.$i];
-//   }
-// }
+for($i = 1; $i < tag_count; ++$i) {
+  if(isset($_POST[$i])) {
+    $tags[$i] = $_POST[$i];
+  }
+}

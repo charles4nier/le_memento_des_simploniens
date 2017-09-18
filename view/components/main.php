@@ -1,17 +1,19 @@
-<main class="container">
+<main id="main class="container">
   <div class="row">
     <!-- Formulaire de création d'article -->
     <form class="flexColumn perfectCenter" action="../public/articles/store.php" method="post" ng-show="showCreateForm">
-      <div class="inputContainer tagContainerParent">
-        <div class="tagContainer" ng-repeat="tag in tags" ng-click="check($event)">
-          <label for="{{tag.id_tag}}">{{tag.tag_name}}</label>
-          <input type="hidden" name="{{tag.id_tag}}" value="{{tag.tag_name}}">
+      <div id="tagContainerParent" class="inputContainer tagContainerParent">
+        <div id="tagsContainer" class="tagsContainer">
+          <div id="tagContainer{{tag.id_tag}}" class="tagContainer" ng-repeat="tag in tags" ng-click="check($event)">
+            <label for="{{tag.id_tag}}">{{tag.tag_name}}</label>
+            <input class="tags" type="checkbox" name="{{tag.id_tag}}" value="{{tag.tag_name}}">
+          </div>
         </div>
         <div class="addTagContainer">
           <input id="addTagInput" type="text" name="" value="" class="test" ng-focus="displayValidate($event)" ng-keyup="displayValidate($event)"
           ng-blur="displayValidate($event)">
-          <i class="material-icons roundIcon" ng-show="showAddTags" ng-click="showAddTagInput()">add</i>
-          <i id="validAddTag" class="material-icons roundIcon" ng-show="!showAddTags">check</i>
+          <span class="roundIcon" ng-show="showAddTags" ng-click="showAddTagInput()">Ajouter un tag</span>
+          <i id="validAddTag" class="material-icons roundIcon" ng-show="!showAddTags" ng-click="pushTag($event)">check</i>
         </div>
       </div>
       <div class="inputcontainer">

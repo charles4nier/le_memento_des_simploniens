@@ -285,6 +285,13 @@ main {
       }
     }
 
+    .tagsContainer {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
     .tagContainer {
       display: flex;
       justify-content: center;
@@ -320,7 +327,7 @@ main {
       input {
         transform: scaleX(0);
         transform-origin: left;
-        transition: all .1s ease-out;
+        transition: all .35s ease-out;
         margin: 6px 15px 0 45px;
       }
       .isVisible {

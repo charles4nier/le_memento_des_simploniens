@@ -3,6 +3,19 @@ let app = angular.module("myApp", []);
 
 app.controller("accessDataBaseArticle", function($scope, $http) {
 
+  // document.querySelector('main').addEventListener('click', function(event) {
+  //     if(event.target.classList.contains('tagContainer')) {
+  //       if(event.target.childNodes[3].hasAttribute('checked')) {
+  //         event.target.classList.remove('checked');
+  //         event.target.childNodes[3].removeAttribute('checked');
+  //       } else {
+  //         event.target.childNodes[3].setAttribute('checked', 'true ');
+  //         event.target.classList.add('checked');
+  //       }
+  //     }
+  //     // event.target.classList.add('checked');
+  // });
+
   $scope.show = true;
   $scope.showTags = false;
   $scope.showTagArticles = false;
@@ -29,6 +42,12 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
     $http.get("tags/index.php")
     .then(function(response) {
       $scope.tags = response.data.tags;
+
+      // for(let i = 0; i < tagContainers.length; i++) {
+      //   tagContainers[i].addEventListener('click', function() {
+      //     alert('bonjour');
+      //   });
+      // }
     });
   }
 
@@ -93,7 +112,6 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
     });
   }
 
-
   $scope.displayTag = function () {
     $scope.show = false;
     $scope.showTags = true;
@@ -131,15 +149,15 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
     });
   }
 
-  $scope.check = function ($event) {
-    if($event.target.childNodes[3].hasAttribute('checked')) {
-      $event.target.classList.remove('checked');
-      $event.target.childNodes[3].removeAttribute('checked');
-    } else {
-      $event.target.childNodes[3].setAttribute('checked', 'true ');
-      $event.target.classList.add('checked');
-    }
-  }
+  // $scope.check = function ($event) {
+  //   if($event.target.childNodes[3].hasAttribute('checked')) {
+  //     $event.target.classList.remove('checked');
+  //     $event.target.childNodes[3].removeAttribute('checked');
+  //   } else {
+  //     $event.target.childNodes[3].setAttribute('checked', 'true ');
+  //     $event.target.classList.add('checked');
+  //   }
+  // }
 
   $scope.showAddTagInput = function () {
     $scope.showAddTags = false;
@@ -154,53 +172,44 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
     } else {
       document.getElementById('validAddTag').classList.remove('add');
     }
-    // alert($event.target.value);
+  }
+
+
+  $scope.pushTag = function ($event) {
+    if($event.target.classList.contains('add')) {
+      let countTags = document.getElementsByClassName('tags').length;
+      let tagContent = document.getElementById('addTagInput').value;
+
+      let newTagContainer = document.createElement('div');
+      newTagContainer.id = 'tagContainer'+ (countTags + 1);
+      newTagContainer.classList.add('tagContainer', 'ng-scope');
+      newTagContainer.setAttribute('ng-click', "check($event)");
+
+      let newLabel = document.createElement('label');
+      newLabel.setAttribute('for', (countTags + 1));
+      let newLabelContent = document.createTextNode(tagContent);
+
+      let newCheckbox = document.createElement('input');
+      newCheckbox.classList.add('tags');
+      newCheckbox.type = "checkbox";
+      newCheckbox.name = countTags + 1;
+      newCheckbox.value = tagContent;
+
+      newLabel.appendChild(newLabelContent);
+      newTagContainer.insertAdjacentElement('beforeend', newLabel);
+      newTagContainer.insertAdjacentElement('beforeend', newCheckbox);
+      document.getElementById('tagsContainer').insertAdjacentElement('beforeend',newTagContainer);
+
+      document.getElementById('addTagInput').value = "";
+      document.getElementById('validAddTag').classList.remove('add');
+    }
   }
 
   $scope.loadArticles();
-
 });
 
-// app.controller("accessDataBaseTag", function($scope, $http) {
-//   $http.get("tags/index.php")
-//   .then(function(response) {
-//     $scope.tags = response.data.tags;
-//
-//     $scope.getTagName = function ($event) {
-//       // récupération du titre de l'article au click
-//       tagName = $event.currentTarget.textContent;
-//       showTagArticles = true;
-//     }
-//   });
-// });
-
-
-
-app.controller("accessDataBaseTagArticle", function($scope, $http) {
-  $http.get("tagArticles/index.php")
-  .then(function(response) {
-    $scope.displayTagArticles = [];
-    $scope.tagArticles = response.data.tagArticles;
-    window.addEventListener('click', function() {
-      if(tagName.length > 0 ) {
-        $scope.displayTagArticles = [];
-        for(let i = 0; i < $scope.tagArticles.length; i++) {
-          if(tagName === $scope.tagArticles[i].tag_article_name) {
-            $scope.displayTagArticles.push($scope.tagArticles[i]);
-          }
-        }
-
-      showTagArticles = false;
-      $scope.showTagArticles = showTagArticles;
-      return $scope.displayTagArticles;
-      }
-    });
-
-  });
-});
-
-// window.addEventListener('click', function() {
-//   if(tagName.length > 0 ) {
-//     console.log(tagName);
+// document.getElement.addEventListener('click', function (event) {
+//   if(event.target.hasClass('tagsContainer')) {
+//     alert('bonjour');
 //   }
-// });
+// })
