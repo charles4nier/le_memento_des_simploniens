@@ -226,7 +226,17 @@ main {
       align-items: center;
       width: 100%; }
       main form .addTagContainer input {
-        transform: scaleX(0); }
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: all .1s ease-out;
+        margin: 6px 15px 0 45px; }
+      main form .addTagContainer .isVisible {
+        transform: scaleX(1); }
+      main form .addTagContainer .add {
+        background-color: #64dd17;
+        color: white; }
+        main form .addTagContainer .add:hover {
+          box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); }
   main textarea {
     height: 40px; }
   main input, main textarea {

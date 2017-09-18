@@ -319,6 +319,19 @@ main {
       width: 100%;
       input {
         transform: scaleX(0);
+        transform-origin: left;
+        transition: all .1s ease-out;
+        margin: 6px 15px 0 45px;
+      }
+      .isVisible {
+        transform: scaleX(1);
+      }
+      .add {
+        background-color: #64dd17;
+        color: $white;
+        &:hover {
+          box-shadow: 0 2px 2px rgba(0,0,0, .3);
+        }
       }
     }
   }

@@ -8,6 +8,7 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
   $scope.showTagArticles = false;
   $scope.showCreateForm = false;
   $scope.showEditForm = false;
+  $scope.showAddTags = true;
 
 
   $scope.showArticle = function() {
@@ -138,6 +139,22 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
       $event.target.childNodes[3].setAttribute('checked', 'true ');
       $event.target.classList.add('checked');
     }
+  }
+
+  $scope.showAddTagInput = function () {
+    $scope.showAddTags = false;
+    document.getElementById('addTagInput').classList.add('isVisible');
+  }
+
+
+  $scope.displayValidate = function ($event) {
+    tagName = $event.target.value;
+    if(tagName.length > 0 ) {
+      document.getElementById('validAddTag').classList.add('add');
+    } else {
+      document.getElementById('validAddTag').classList.remove('add');
+    }
+    // alert($event.target.value);
   }
 
   $scope.loadArticles();

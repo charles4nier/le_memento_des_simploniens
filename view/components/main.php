@@ -8,8 +8,10 @@
           <input type="hidden" name="{{tag.id_tag}}" value="{{tag.tag_name}}">
         </div>
         <div class="addTagContainer">
-          <input type="text" name="" value="" class="test">
-          <i class="material-icons roundIcon">add</i>
+          <input id="addTagInput" type="text" name="" value="" class="test" ng-focus="displayValidate($event)" ng-keyup="displayValidate($event)"
+          ng-blur="displayValidate($event)">
+          <i class="material-icons roundIcon" ng-show="showAddTags" ng-click="showAddTagInput()">add</i>
+          <i id="validAddTag" class="material-icons roundIcon" ng-show="!showAddTags">check</i>
         </div>
       </div>
       <div class="inputcontainer">
