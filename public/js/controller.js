@@ -195,9 +195,15 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
       newCheckbox.name = countTags + 1;
       newCheckbox.value = tagContent;
 
+      let newHiddenInput = document.createElement('input');
+      newHiddenInput.type = "hidden";
+      newHiddenInput.name = "idTag" + (countTags + 1);
+      newHiddenInput.value = countTags + 1;
+
       newLabel.appendChild(newLabelContent);
       newTagContainer.insertAdjacentElement('beforeend', newLabel);
       newTagContainer.insertAdjacentElement('beforeend', newCheckbox);
+      newTagContainer.insertAdjacentElement('beforeend', newHiddenInput);
       document.getElementById('tagsContainer').insertAdjacentElement('beforeend',newTagContainer);
 
       document.getElementById('addTagInput').value = "";

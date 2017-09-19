@@ -7,6 +7,7 @@
           <div id="tagContainer{{tag.id_tag}}" class="tagContainer" ng-repeat="tag in tags" ng-click="check($event)">
             <label for="{{tag.id_tag}}">{{tag.tag_name}}</label>
             <input class="tags" type="checkbox" name="{{tag.id_tag}}" value="{{tag.tag_name}}">
+            <input type="hidden" name="idTag{{tag.id_tag}}" value="{{tag.id_tag}}">
           </div>
         </div>
         <div class="addTagContainer">
