@@ -42,7 +42,7 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
     $http.get("tags/index.php")
     .then(function(response) {
       $scope.tags = response.data.tags;
-
+      $scope.tagsLength = $scope.tags.length;
       // for(let i = 0; i < tagContainers.length; i++) {
       //   tagContainers[i].addEventListener('click', function() {
       //     alert('bonjour');
@@ -202,6 +202,10 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
 
       document.getElementById('addTagInput').value = "";
       document.getElementById('validAddTag').classList.remove('add');
+
+      countTags = document.getElementsByClassName('tags').length;
+      document.getElementById('countTags').value = countTags;
+      console.log(document.getElementById('countTags').value);
     }
   }
 

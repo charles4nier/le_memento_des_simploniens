@@ -1,4 +1,4 @@
-<main id="main class="container">
+<main class="container">
   <div class="row">
     <!-- Formulaire de création d'article -->
     <form class="flexColumn perfectCenter" action="../public/articles/store.php" method="post" ng-show="showCreateForm">
@@ -12,6 +12,7 @@
         <div class="addTagContainer">
           <input id="addTagInput" type="text" name="" value="" class="test" ng-focus="displayValidate($event)" ng-keyup="displayValidate($event)"
           ng-blur="displayValidate($event)">
+          <input type="hidden" name="countTags" value="{{tagsLength}}" class="countTags" id="countTags">
           <span class="roundIcon" ng-show="showAddTags" ng-click="showAddTagInput()">Ajouter un tag</span>
           <i id="validAddTag" class="material-icons roundIcon" ng-show="!showAddTags" ng-click="pushTag($event)">check</i>
         </div>
