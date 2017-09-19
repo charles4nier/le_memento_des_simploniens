@@ -9,9 +9,24 @@ if(isset($_POST['id_article']) || isset($_POST['title']) || isset($_POST['conten
   $link = $_POST['link'];
 }
 
+$tags = [];
 
-for($i = 1; $i < $_POST['countTags']; ++$i) {
-  if(isset($_POST[$i])) {
-    $tags[$i] = $_POST[$i];
+if(isset($_POST['countTags'])) {
+  $datas = Tag::getTags();
+
+  foreach($datas as $data)
+  {
+    if(isset( $_POST[$data['tag_name']] ) )
+    {
+      array_push($tags, $_POST[$data['tag_name']]);
+    }
+  }
+
+  for($i = 1; $i <= $_POST['countTags']; $i++)
+  {
+    if(isset($_POST[$i]))
+    {
+      array_push($tags, $_POST[$i]);
+    }
   }
 }

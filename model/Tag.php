@@ -22,6 +22,7 @@
     * @param string $id_tag : the tag's id
     * @param string $tag_name : the tag's name
     */
+
    public static function createTag ($tag_name) {
      global $bdd;
 
