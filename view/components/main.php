@@ -5,7 +5,7 @@
       <div id="tagContainerParent" class="inputContainer tagContainerParent">
         <div id="tagsContainer" class="tagsContainer">
           <div id="tagContainer{{tag.id_tag}}" class="tagContainer" ng-repeat="tag in tags" ng-click="check($event)">
-            <label for="{{$index + 1}}">{{tag.tag_name}}</label>
+            <label for="{{$index + 1}}">{{tag.tag_name | uppercase}}</label>
             <input class="tags" type="checkbox" name="{{$index + 1}}" value="{{tag.tag_name}}">
           </div>
         </div>
@@ -13,7 +13,7 @@
           <input id="addTagInput" type="text" name="" value="" class="test" ng-focus="displayValidate($event)" ng-keyup="displayValidate($event)"
           ng-blur="displayValidate($event)">
           <input type="hidden" name="countTags" value="{{tagsLength}}" class="countTags" id="countTags">
-          <span class="roundIcon" ng-show="showAddTags" ng-click="showAddTagInput()">Ajouter un tag</span>
+          <span class="connexion " ng-show="showAddTags" ng-click="showAddTagInput()">Ajouter un tag</span>
           <i id="validAddTag" class="material-icons roundIcon" ng-show="!showAddTags" ng-click="pushTag($event)">check</i>
         </div>
       </div>
@@ -98,7 +98,7 @@
   <!--  page des tags -->
   <div ng-show="showTags">
     <nav class="tag_nav">
-      <p class="perfectCenter" ng-repeat="tag in tags" ng-click="displayTagArticles($event)">{{tag.tag_name}}</p>
+      <p class="perfectCenter" ng-repeat="tag in tags" ng-click="displayTagArticles($event)">{{tag.tag_name | uppercase}}</p>
     </nav>
   </div>
 

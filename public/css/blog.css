@@ -232,12 +232,16 @@ main {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100%; }
+      width: 100%;
+      margin-top: 15px; }
+      main form .addTagContainer span {
+        cursor: pointer; }
       main form .addTagContainer input {
+        width: 300px;
         transform: scaleX(0);
         transform-origin: left;
         transition: all .35s ease-out;
-        margin: 6px 15px 0 45px; }
+        margin: 3px 15px 0 0; }
       main form .addTagContainer .isVisible {
         transform: scaleX(1); }
       main form .addTagContainer .add {

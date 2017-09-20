@@ -327,11 +327,16 @@ main {
       justify-content: center;
       align-items: center;
       width: 100%;
+      margin-top: 15px;
+      span {
+        cursor: pointer;        
+      }
       input {
+        width: 300px;
         transform: scaleX(0);
         transform-origin: left;
         transition: all .35s ease-out;
-        margin: 6px 15px 0 45px;
+        margin: 3px 15px 0 0;
       }
       .isVisible {
         transform: scaleX(1);
