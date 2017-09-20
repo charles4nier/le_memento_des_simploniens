@@ -2,21 +2,7 @@ let tagName = "";
 let app = angular.module("myApp", []);
 
 app.controller("accessDataBaseArticle", function($scope, $http) {
-  // document.querySelector('main').addEventListener('click', function(event) {
-  //     if(event.target.classList.contains('tagContainer')) {
-  //       if(event.target.childNodes[3].hasAttribute('checked')) {
-  //         event.target.classList.remove('checked');
-  //         event.target.childNodes[3].removeAttribute('checked');
-  //       } else {
-  //         event.target.childNodes[3].setAttribute('checked', 'true ');
-  //         event.target.classList.add('checked');
-  //       }
-  //     }
-  //     // event.target.classList.add('checked');
-  // });
-
-
-
+// Initialisation des différentes varianles permettant l'affichage
   $scope.show = true;
   $scope.showTags = false;
   $scope.showTagArticles = false;
@@ -33,6 +19,7 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
     $scope.showEditForm = false;
   }
 
+  // affiche le formulaire de création d'articles
   $scope.displayCreateForm = function () {
     $scope.show = false;
     $scope.showTags = false;
@@ -48,6 +35,7 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
 
   }
 
+  // affiche le formulaire d'édition
   $scope.displayEditForm = function () {
     $scope.show = false;
     $scope.showTags = false;
@@ -56,6 +44,7 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
     $scope.showEditForm = true;
   }
 
+  // charge les articles
   $scope.loadArticles = function ($event) {
 
     $http.get("articles/index.php")
@@ -109,6 +98,7 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
     });
   }
 
+  // affiche les tags
   $scope.displayTag = function () {
     $scope.show = false;
     $scope.showTags = true;
@@ -124,12 +114,16 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
 
   $scope.dataTagArticles = [];
 
+  // affiche les tagArticles
   $scope.displayTagArticles = function ($event) {
+      //récupération du texte provenant de la carte cliquée
       tagName = $event.currentTarget.textContent;
       $http.get("tagArticles/index.php")
       .then(function(response) {
         $scope.tagArticles = response.data.tagArticles;
+        //si tagName n'est pas vide
         if(tagName.length > 0 ) {
+          //, on remplit $scope.dataTagArticles
           $scope.dataTagArticles = [];
           for(let i = 0; i < $scope.tagArticles.length; i++) {
             if(tagName === $scope.tagArticles[i].tag_article_name) {
@@ -146,6 +140,7 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
     });
   }
 
+  // permet de check les inputs du formulaire de création d'article
   $scope.check = function ($event) {
     if($event.target.childNodes[3].hasAttribute('checked')) {
       $event.target.classList.remove('checked');
@@ -174,18 +169,19 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
 
   $scope.pushTag = function ($event) {
     let tagContent = document.getElementById('addTagInput').value;
-    let countTags = document.getElementsByClassName('tags').length + 1;
-    $scope.tags.push({tag_name: tagContent, id_tag: countTags});
-    document.getElementById('addTagInput').value = "";
-    document.getElementById('validAddTag').classList.remove('add');
-    $scope.tagsLength = $scope.tagsLength + 1;
+    let countTags = document.getElementsByClassName('tags').length + 1
+
+    if(tagContent.length > 0) {
+      $scope.tags.push({tag_name: tagContent, id_tag: countTags});
+      document.getElementById('addTagInput').value = "";
+      document.getElementById('validAddTag').classList.remove('add');
+      $scope.tagsLength = $scope.tagsLength + 1;
+    } else {
+      alert('Vous devez remplir le champ avant de valider');
+
+    }
+
   }
 
   $scope.loadArticles();
 });
-
-// document.getElement.addEventListener('click', function (event) {
-//   if(event.target.hasClass('tagsContainer')) {
-//     alert('bonjour');
-//   }
-// })
