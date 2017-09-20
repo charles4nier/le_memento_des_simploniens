@@ -179,43 +179,6 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
     document.getElementById('addTagInput').value = "";
     document.getElementById('validAddTag').classList.remove('add');
     $scope.tagsLength = $scope.tagsLength + 1;
-    /*if($event.target.classList.contains('add')) {
-      let countTags = document.getElementsByClassName('tags').length;
-      let tagContent = document.getElementById('addTagInput').value;
-
-      let newTagContainer = document.createElement('div');
-      newTagContainer.id = 'tagContainer'+ (countTags + 1);
-      newTagContainer.classList.add('tagContainer', 'ng-scope');
-      newTagContainer.setAttribute('ng-click', "check($event)");
-
-      let newLabel = document.createElement('label');
-      newLabel.setAttribute('for', (countTags + 1));
-      let newLabelContent = document.createTextNode(tagContent);
-
-      let newCheckbox = document.createElement('input');
-      newCheckbox.classList.add('tags');
-      newCheckbox.type = "checkbox";
-      newCheckbox.name = countTags + 1;
-      newCheckbox.value = tagContent;
-
-      let newHiddenInput = document.createElement('input');
-      newHiddenInput.type = "hidden";
-      newHiddenInput.name = "idTag" + (countTags + 1);
-      newHiddenInput.value = countTags + 1;
-
-      newLabel.appendChild(newLabelContent);
-      newTagContainer.insertAdjacentElement('beforeend', newLabel);
-      newTagContainer.insertAdjacentElement('beforeend', newCheckbox);
-      newTagContainer.insertAdjacentElement('beforeend', newHiddenInput);
-      document.getElementById('tagsContainer').insertAdjacentElement('beforeend',newTagContainer);
-
-
-      document.getElementById('validAddTag').classList.remove('add');
-
-      countTags = document.getElementsByClassName('tags').length;
-      document.getElementById('countTags').value = countTags;
-      console.log(document.getElementById('countTags').value);
-    }*/
   }
 
   $scope.loadArticles();

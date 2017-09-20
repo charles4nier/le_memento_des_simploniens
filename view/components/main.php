@@ -98,7 +98,7 @@
   <!--  page des tags -->
   <div ng-show="showTags">
     <nav class="tag_nav">
-      <p class="perfectCenter" ng-repeat="tag in tags" ng-click="displayTagArticles($event)">{{tag.tag_name | uppercase}}</p>
+      <p class="perfectCenter" ng-repeat="tag in tags" ng-click="displayTagArticles($event)">{{tag.tag_name}}</p>
     </nav>
   </div>
 
