@@ -9,7 +9,7 @@ if(isset($_POST['id_article']) || isset($_POST['title']) || isset($_POST['conten
   $link = $_POST['link'];
 }
 
-$tags = [];
+$tagValues = [];
 
 if(isset($_POST['countTags'])) {
   $datas = Tag::getTags();
@@ -18,7 +18,7 @@ if(isset($_POST['countTags'])) {
   {
     if(isset( $_POST[$data['tag_name']] ) )
     {
-      array_push($tags, $_POST[$data['tag_name']]);
+      array_push($tagValues, $_POST[$data['tag_name']]);
     }
   }
 
@@ -26,7 +26,7 @@ if(isset($_POST['countTags'])) {
   {
     if(isset($_POST[$i]))
     {
-      array_push($tags, $_POST[$i]);
+      array_push($tagValues, $_POST[$i]);
     }
   }
 }

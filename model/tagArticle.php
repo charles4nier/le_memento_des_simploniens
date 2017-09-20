@@ -34,4 +34,23 @@
        'id_tag' => $id_tag
      ));
    }
+
+   /**
+    * deleteTagArticle deletes an article from the targeted table
+    *
+    * @param string $id_article : Input article's id
+    */
+    public static function deleteTagArticle ($id_article) {
+     global $bdd;
+
+      if(gettype($id_article) != 'integer' && $id_article != '0') {
+        $req =  $bdd->prepare('DELETE FROM tag_article WHERE id_article = :id_article');
+
+        return $req->execute(array(
+          'id_article' => $id_article
+        ));
+      }
+
+       return false;
+    }
  }
