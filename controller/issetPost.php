@@ -12,15 +12,16 @@ if(isset($_POST['id_article']) || isset($_POST['title']) || isset($_POST['conten
 $tagValues = [];
 
 if(isset($_POST['countTags'])) {
-  $datas = Tag::getTags();
+  echo $_POST['countTags'] .PHP_EOL;
+  // $datas = Tag::getTags();
 
-  foreach($datas as $data)
-  {
-    if(isset( $_POST[$data['tag_name']] ) )
-    {
-      array_push($tagValues, $_POST[$data['tag_name']]);
-    }
-  }
+  // foreach($datas as $data)
+  // {
+  //   if(isset( $_POST[$data['tag_name']] ) )
+  //   {
+  //     array_push($tagValues, $_POST[$data['tag_name']]);
+  //   }
+  // }
 
   for($i = 1; $i <= $_POST['countTags']; $i++)
   {

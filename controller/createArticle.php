@@ -13,19 +13,20 @@
 
   if(isset($tagValues))
   {
+    // var_dump($tagValues);
     // get existant tags
     $datas = Tag::getTags();
-    $checkedTags = [];
+    $tagToCheck = [];
 
     // ttt sur tab tags existant : récupération tagName
     foreach ($datas as $data)
     {
-      array_push($checkedTags, $data['tag_name']);
+      array_push($tagToCheck, $data['tag_name']);
     }
 
     for($i = 0; $i < count($tagValues); $i++)
     {
-      if(!in_array($tagValues[$i], $checkedTags))
+      if(!in_array($tagValues[$i], $tagToCheck))
       {
         Tag::createTag(strtoupper($tagValues[$i]));
       }
@@ -43,15 +44,9 @@
     {
       foreach ($datas as $data)
       {
-        if($tagValues[$i] === $data['tag_name'])
+        if(strtoupper($tagValues[$i]) === $data['tag_name'])
         {
-
           tagArticle::createTagArticle($articles[$articlesLength]['id_article'],$data['id_tag']);
-          echo "à créer" .$tagValues[$i] .PHP_EOL;
-        }
-        else
-        {
-          echo "à po compris" .$tagValues[$i] .PHP_EOL;
         }
       }
     }

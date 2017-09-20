@@ -2,7 +2,6 @@ let tagName = "";
 let app = angular.module("myApp", []);
 
 app.controller("accessDataBaseArticle", function($scope, $http) {
-
   // document.querySelector('main').addEventListener('click', function(event) {
   //     if(event.target.classList.contains('tagContainer')) {
   //       if(event.target.childNodes[3].hasAttribute('checked')) {
@@ -15,6 +14,8 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
   //     }
   //     // event.target.classList.add('checked');
   // });
+
+
 
   $scope.show = true;
   $scope.showTags = false;
@@ -43,12 +44,8 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
     .then(function(response) {
       $scope.tags = response.data.tags;
       $scope.tagsLength = $scope.tags.length;
-      // for(let i = 0; i < tagContainers.length; i++) {
-      //   tagContainers[i].addEventListener('click', function() {
-      //     alert('bonjour');
-      //   });
-      // }
     });
+
   }
 
   $scope.displayEditForm = function () {
@@ -149,15 +146,15 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
     });
   }
 
-  // $scope.check = function ($event) {
-  //   if($event.target.childNodes[3].hasAttribute('checked')) {
-  //     $event.target.classList.remove('checked');
-  //     $event.target.childNodes[3].removeAttribute('checked');
-  //   } else {
-  //     $event.target.childNodes[3].setAttribute('checked', 'true ');
-  //     $event.target.classList.add('checked');
-  //   }
-  // }
+  $scope.check = function ($event) {
+    if($event.target.childNodes[3].hasAttribute('checked')) {
+      $event.target.classList.remove('checked');
+      $event.target.childNodes[3].removeAttribute('checked');
+    } else {
+      $event.target.childNodes[3].setAttribute('checked', 'true');
+      $event.target.classList.add('checked');
+    }
+  }
 
   $scope.showAddTagInput = function () {
     $scope.showAddTags = false;
@@ -176,7 +173,13 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
 
 
   $scope.pushTag = function ($event) {
-    if($event.target.classList.contains('add')) {
+    let tagContent = document.getElementById('addTagInput').value;
+    let countTags = document.getElementsByClassName('tags').length + 1;
+    $scope.tags.push({tag_name: tagContent, id_tag: countTags});
+    document.getElementById('addTagInput').value = "";
+    document.getElementById('validAddTag').classList.remove('add');
+    $scope.tagsLength = $scope.tagsLength + 1;
+    /*if($event.target.classList.contains('add')) {
       let countTags = document.getElementsByClassName('tags').length;
       let tagContent = document.getElementById('addTagInput').value;
 
@@ -206,13 +209,13 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
       newTagContainer.insertAdjacentElement('beforeend', newHiddenInput);
       document.getElementById('tagsContainer').insertAdjacentElement('beforeend',newTagContainer);
 
-      document.getElementById('addTagInput').value = "";
+
       document.getElementById('validAddTag').classList.remove('add');
 
       countTags = document.getElementsByClassName('tags').length;
       document.getElementById('countTags').value = countTags;
       console.log(document.getElementById('countTags').value);
-    }
+    }*/
   }
 
   $scope.loadArticles();

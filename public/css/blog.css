@@ -206,6 +206,7 @@ main {
       flex-wrap: wrap;
       align-items: center; }
     main form .tagContainer {
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -219,8 +220,10 @@ main {
         margin: 0 5px 0 0;
         color: #525252; }
       main form .tagContainer input[type=checkbox] {
+        position: absolute;
         width: 15px;
-        margin: 0; }
+        margin: 0;
+        visibility: hidden; }
     main form .checked {
       background-color: red; }
       main form .checked label {

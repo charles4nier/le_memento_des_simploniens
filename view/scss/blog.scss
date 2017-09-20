@@ -293,6 +293,7 @@ main {
     }
 
     .tagContainer {
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -307,8 +308,10 @@ main {
         color: $darkgrey;
       }
       input[type=checkbox] {
+        position: absolute;
         width: 15px;
         margin: 0;
+        visibility: hidden;
       }
     }
 

@@ -5,9 +5,8 @@
       <div id="tagContainerParent" class="inputContainer tagContainerParent">
         <div id="tagsContainer" class="tagsContainer">
           <div id="tagContainer{{tag.id_tag}}" class="tagContainer" ng-repeat="tag in tags" ng-click="check($event)">
-            <label for="{{tag.tag_name}}">{{tag.tag_name}}</label>
-            <input class="tags" type="checkbox" name="{{tag.tag_name}}" value="{{tag.tag_name}}">
-            <input type="hidden" name="idTag{{tag.id_tag}}" value="{{tag.id_tag}}">
+            <label for="{{$index + 1}}">{{tag.tag_name}}</label>
+            <input class="tags" type="checkbox" name="{{$index + 1}}" value="{{tag.tag_name}}">
           </div>
         </div>
         <div class="addTagContainer">
