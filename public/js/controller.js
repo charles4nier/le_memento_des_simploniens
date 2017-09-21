@@ -2,7 +2,7 @@ let tagName = "";
 let app = angular.module("myApp", []);
 
 app.controller("accessDataBaseArticle", function($scope, $http) {
-// Initialisation des différentes varianles permettant l'affichage
+  // Initialisation des différentes varianles permettant l'affichage
   $scope.show = true;
   $scope.showTags = false;
   $scope.showTagArticles = false;
@@ -10,7 +10,7 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
   $scope.showEditForm = false;
   $scope.showAddTags = true;
 
-
+  // la fonction showArticle affiche la page d'article
   $scope.showArticle = function() {
     $scope.show = true;
     $scope.showTags = false;
@@ -19,7 +19,7 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
     $scope.showEditForm = false;
   }
 
-  // affiche le formulaire de création d'articles
+  // la fonction displayCreateForm affiche le formulaire de création d'articles
   $scope.displayCreateForm = function () {
     $scope.show = false;
     $scope.showTags = false;
@@ -35,7 +35,7 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
 
   }
 
-  // affiche le formulaire d'édition
+  // la fonction displayEditForm affiche le formulaire d'édition
   $scope.displayEditForm = function () {
     $scope.show = false;
     $scope.showTags = false;
@@ -53,8 +53,8 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
       // récupération de la base de donnée
       $scope.articles = response.data.articles;
 
-      // création de length, qui me permet de retrouver l'index de la page voulu (par défaut, le dernier article du blog sera affiché).
-      $scope.length = $scope.articles.length - 1;
+      // création de length, qui me permet de retrouver l'index de la page voulu (par défaut, le dernier article du blog sera affiché (la récupération des articles depuis la base de données se fait par ordre décroissant)).
+      $scope.length = 0;
 
       // navigation dans le blog avec les boutons before et after
       $scope.before = function() {
@@ -151,12 +151,13 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
     }
   }
 
+  // la function showAddTagInput affiche l'input permettant de saisir le nom d'un  nouveau tag
   $scope.showAddTagInput = function () {
     $scope.showAddTags = false;
     document.getElementById('addTagInput').classList.add('isVisible');
   }
 
-
+  // la function displayValidate ajoute le bouton d'ajout de tag
   $scope.displayValidate = function ($event) {
     tagName = $event.target.value;
     if(tagName.length > 0 ) {
@@ -166,7 +167,7 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
     }
   }
 
-
+  // la function pushTag permet d'ajouter des tags dans le formulaire de création d 'articles
   $scope.pushTag = function ($event) {
     let tagContent = document.getElementById('addTagInput').value;
     let countTags = document.getElementsByClassName('tags').length + 1
@@ -178,9 +179,7 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
       $scope.tagsLength = $scope.tagsLength + 1;
     } else {
       alert('Vous devez remplir le champ avant de valider');
-
     }
-
   }
 
   $scope.loadArticles();

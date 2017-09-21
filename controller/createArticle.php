@@ -1,10 +1,7 @@
 <?php
   require '../../model/Tag.php';
-
   require '../../controller/issetPost.php';
-
   require '../../model/Article.php';
-
   require '../../model/tagArticle.php';
 
   Article::createArticle($title, $content, $link);
@@ -13,7 +10,6 @@
 
   if(isset($tagValues))
   {
-    // var_dump($tagValues);
     // get existant tags
     $datas = Tag::getTags();
     $tagToCheck = [];

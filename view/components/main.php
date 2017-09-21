@@ -80,11 +80,11 @@
         ?>
 
         <!--  Zone d'affichage de l'article -->
-        <h2>{{ articles[0].title }}</h2>
-        <p>{{ articles[0].content }}</p><br>
+        <h2>{{ articles[length].title }}</h2>
+        <p>{{ articles[length].content }}</p><br>
         <div class="flexColumn perfectCenter">
           <a href="{{ articles[length].link}}" target="_blank" class="testZone">
-            {{ articles[0].link}}
+            {{ articles[length].link}}
           </a>
         </div>
         <nav class="flexRow boutonContainer justifySpaceBetween">

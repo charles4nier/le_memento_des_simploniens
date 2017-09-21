@@ -1,11 +1,10 @@
 <?php
+  try {
 
-try {
+    $bdd = new PDO('mysql:host=localhost;dbname=portfolio_db;charset=utf8', 'root', 'coucou1948');
 
-  $bdd = new PDO('mysql:host=localhost;dbname=portfolio_db;charset=utf8', 'root', 'coucou1948');
+  } catch (Exception $e) {
 
-} catch (Exception $e) {
+    die('Erreur : ' . $e->getMessage());
 
-  die('Erreur : ' . $e->getMessage());
-
-}
+  }
