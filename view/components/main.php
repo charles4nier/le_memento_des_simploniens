@@ -1,5 +1,5 @@
 <main class="container">
-  <div class="row">
+  <div class="row formRow">
     <!-- Formulaire de création d'article -->
     <form class="flexColumn perfectCenter" action="../public/articles/store.php" method="post" ng-show="showCreateForm">
       <div id="tagContainerParent" class="inputContainer tagContainerParent">
@@ -55,8 +55,8 @@
     </form>
   </div>
   <div class="row articleContainer" ng-show="show">
-    <!--  menu latéral droit -->
-    <nav class="col-md-3 hidden-xs hidden-sm" ng-show="show">
+    <!--  menu latéral gauche -->
+    <nav class="col-md-3 hidden-xs hidden-sm leftMenu" ng-show="show">
       <h2 class="text-center">Tous les articles</h2>
       <ul>
         <li ng-repeat="article in articles" ng-click="getIndex($event)">{{article.title}}</li>

@@ -114,11 +114,14 @@ i, .connexion {
   }
 }
 
+.smallDeviceAdd {
+  display: none !important;
+}
+
 
 header {
   background-color: $white;
   border-bottom: 1px solid $grey;
-
 
   a {
     display: flex;
@@ -221,8 +224,7 @@ li.parent:hover {
 main {
   background-color: $white;
   align-items: flex-start;
-  height: 100vh;
-
+  height: calc(100vh - 100px);
   form {
     background-color: $white;
     padding: 25px 10px;
@@ -329,7 +331,7 @@ main {
       width: 100%;
       margin-top: 15px;
       span {
-        cursor: pointer;        
+        cursor: pointer;
       }
       input {
         width: 300px;
@@ -360,19 +362,20 @@ main {
     width: 350px;
   }
 
-
-
   .articleContainer {
     height: 100%;
   }
 
+  .leftMenu {
+    overflow-y: scroll;
+  }
+
   nav {
-    height: 90%;
+    height: 100%;
     padding: 0 20px;
     margin-top: 12px;
     color: $darkgrey;
     border-right: 1px solid $grey;
-    overflow-y: scroll;
     h2 {
       color: $red;
       font-size: 1.6em;
@@ -587,11 +590,6 @@ footer {
         margin-top: 15px;
         background-color: $darkgrey;
       }
-
-      .connexion {
-        width: 150px;
-      }
-
     }
 
 
@@ -620,12 +618,19 @@ footer {
     }
 
     form {
-      width: 100% !important;
+      width: 100vw !important;
       padding: 20px 0;
       border: none;
 
       input[type=text], input[type=mail], input[type=password], input[type=number], input[type=tel], textarea {
-        width: 100vw;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid $grey ;
+        padding: 5px 0 5px 5px;
+        color: $darkgrey;
+        width: 250px !important;
+        transition: all 0.2s ease-in-out;
+        letter-spacing: 0.05em;
       }
     }
 }

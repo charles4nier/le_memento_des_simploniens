@@ -76,6 +76,9 @@ i, .connexion {
     color: white;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); }
 
+.smallDeviceAdd {
+  display: none !important; }
+
 header {
   background-color: white;
   border-bottom: 1px solid #dee0df; }
@@ -154,7 +157,7 @@ li.parent:hover ul {
 main {
   background-color: white;
   align-items: flex-start;
-  height: 100vh; }
+  height: calc(100vh - 100px); }
   main form {
     background-color: white;
     padding: 25px 10px;
@@ -256,13 +259,14 @@ main {
     width: 350px; }
   main .articleContainer {
     height: 100%; }
+  main .leftMenu {
+    overflow-y: scroll; }
   main nav {
-    height: 90%;
+    height: 100%;
     padding: 0 20px;
     margin-top: 12px;
     color: #525252;
-    border-right: 1px solid #dee0df;
-    overflow-y: scroll; }
+    border-right: 1px solid #dee0df; }
     main nav h2 {
       color: #fe0000;
       font-size: 1.6em;
@@ -433,6 +437,10 @@ footer {
       background-color: #525252; }
     header .connexion {
       width: 150px; }
+    header .addTagContainer .connexion {
+      display: none; }
+    header .smallDeviceAdd {
+      display: flex !important; }
 
   main {
     padding: 0; }
@@ -452,10 +460,17 @@ footer {
     left: 100px; }
 
   form {
-    width: 100% !important;
+    width: 100vw !important;
     padding: 20px 0;
     border: none; }
     form input[type=text], form input[type=mail], form input[type=password], form input[type=number], form input[type=tel], form textarea {
-      width: 100vw; } }
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #dee0df;
+      padding: 5px 0 5px 5px;
+      color: #525252;
+      width: 250px !important;
+      transition: all 0.2s ease-in-out;
+      letter-spacing: 0.05em; } }
 
 /*# sourceMappingURL=blog.css.map */
