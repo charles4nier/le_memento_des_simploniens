@@ -10,7 +10,8 @@
     if($user)
     {
       $_SESSION['login'] = $user['login'];
-      $_SESSION ['password'] = $user['password'];
+      $_SESSION['password'] = $user['password'];
+      $_SESSION['idUser'] = $user['id_user'];
     }
   }
 

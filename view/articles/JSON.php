@@ -16,7 +16,8 @@
         "id_article" : "<?= $article["id_article"] ?>",
         "title" : "<?= $article["title"] ?>",
         "content" : "<?= trim(preg_replace('/\s\s+/', '', $article["content"])) ?>",
-        "link" : "<?= $article["link"] ?>"
+        "link" : "<?= $article["link"] ?>",
+        "id_user" : "<?= $article["id_user"] ?>"
       }<?php
     $first = false;
   }

@@ -194,6 +194,10 @@ main {
       color: #525252;
       top: -15px;
       font-size: 11px; }
+      main form input:not(:focus):valid ~ .floating-label, main form textarea:not(:focus):valid ~ .floating-label {
+        color: #525252;
+        top: -15px;
+        font-size: 11px; }
     main form .tagContainerParent {
       display: flex;
       flex-direction: row;

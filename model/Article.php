@@ -11,7 +11,8 @@
    public static function getArticles () {
      global $bdd;
 
-     $db = $bdd->query('SELECT * FROM article ORDER BY id_article DESC');
+    //  $db = $bdd->query('SELECT * FROM article ORDER BY id_article DESC');
+      $db = $bdd->query('SELECT * FROM article');
      if($db === false) {
         return $db;
      }

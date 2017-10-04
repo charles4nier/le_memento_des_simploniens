@@ -54,12 +54,35 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
       $scope.articles = response.data.articles;
 
       // création de length, qui me permet de retrouver l'index de la page voulu (par défaut, le dernier article du blog sera affiché (la récupération des articles depuis la base de données se fait par ordre décroissant)).
-      $scope.length = 0;
+      $scope.length = $scope.articles.length - 1;
 
       // navigation dans le blog avec les boutons before et after
+      $scope.callUserTocheck = function () {
+        // $http({
+        //   method: 'POST',
+        //   url: 'user/checkUser.php',
+        //   data: "idUserToCheck=" + $scope.articles[$scope.length].id_user,
+        // }).then(function(response) {
+        //   console.log( "Data Loaded: " + response);
+        // });
+
+        $.ajax({
+          url: 'user/checkUser.php',
+          type: "POST",
+          data: "idUserToCheck=" + $scope.articles[$scope.length].id_user,
+          success: function(response) {
+            console.log( "Data Loaded: " + response );
+          },
+          error: function() {
+            console.log('failed');
+          }
+        });
+      }
+
       $scope.before = function() {
         if($scope.length >= 1) {
           $scope.length--;
+          $scope.callUserTocheck()
         }
       }
 
@@ -67,6 +90,7 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
         if( ($scope.length + 1) < $scope.articles.length)
         {
           $scope.length++;
+          $scope.callUserTocheck()
         }
       }
 
