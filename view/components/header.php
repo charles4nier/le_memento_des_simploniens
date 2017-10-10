@@ -16,12 +16,21 @@
   </head>
   <body ng-app="myApp" ng-controller="accessDataBaseArticle">
     <div class="modalContent" id="openModal">
-      <form class="myModal flexColumn perfectCenter" action="index.php" method="post">
-        <p>Se connecter</p>
+      <form ng-show="displayUserConnect" class="myModal flexColumn perfectCenter" action="index.php" method="post">
+        <p ng-click="displayAddUserFunction()">Nouvel utilisateur</p>
         <input type="text" name="login" value="" placeholder="login">
         <input type="password" name="password" value="" placeholder="password">
-        <input type="submit" name="submit" value="connexion">
-        <a href="index.php">close</a>
+        <input type="submit" name="submit" value="Se connecter">
+        <a href="index.php"> <i class="material-icons">close</i></a>
+      </form>
+      <form ng-show="displayAddUser" class="myModal flexColumn perfectCenter" action="../public/user/addUser.php" method="post">
+        <label for="addLogin"> Veuillez renseigner votre login :</label>
+        <input type="text" name="addLogin" value="" placeholder="login">
+        <label for="addPassword"> Veuillez renseigner votre mot de passe :</label>
+        <input type="password" name="addPassword" value="" placeholder="password">
+        <input type="hidden" name="addRole" value="user">
+        <input type="submit" name="submit" value="S'enregistrer">
+        <a href="index.php"><i class="material-icons">close</i></a>
       </form>
     </div>
     <header class="container-fluid">
@@ -37,10 +46,10 @@
           <?php
             } else {
           ?>
-            <a class="col-xs-12 connexion" href="#openModal">Se connecter</a>
+            <a class="col-xs-12 connexion" href="#openModal" ng-click="displayUserConnectFunction()">Se connecter</a>
           <?php
             }
           ?>
         </nav>
       </div>
-    </header>
+</header>

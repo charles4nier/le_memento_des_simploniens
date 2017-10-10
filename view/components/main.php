@@ -68,7 +68,7 @@
       <article class="flexColumn justifySpaceBetween" ng-show="show">
         <!--  pannel admin si l'admin est connecté-->
         <?php
-          if($adminConnected == true && $_SESSION['idUserToCheck'] == $_SESSION['idUser'])
+          if($adminConnected == true)
           {
         ?>
         <div class="boutonContainer">

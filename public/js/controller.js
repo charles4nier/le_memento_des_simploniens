@@ -44,6 +44,19 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
     $scope.showEditForm = true;
   }
 
+  $scope.displayUserConnect = true;
+  $scope.displayAddUser = false;
+
+  $scope.displayUserConnectFunction = function () {
+    $scope.displayUserConnect = true;
+    $scope.displayAddUser = false;
+  }
+
+  $scope.displayAddUserFunction = function () {
+    $scope.displayUserConnect = false;
+    $scope.displayAddUser = true;
+  }
+
   // charge les articles
   $scope.loadArticles = function ($event) {
 
@@ -72,6 +85,7 @@ app.controller("accessDataBaseArticle", function($scope, $http) {
           data: "idUserToCheck=" + $scope.articles[$scope.length].id_user,
           success: function(response) {
             console.log( "Data Loaded: " + response );
+            // alert("done");
           },
           error: function() {
             console.log('failed');

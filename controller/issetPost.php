@@ -9,6 +9,12 @@
     $link = $_POST['link'];
   }
 
+  if(isset($_POST['addLogin']) || isset($_POST['addPassword']) || isset($_POST['role'])) {
+    $newLogin = $_POST['addLogin'];
+    $newPassword = $_POST['addPassword'];
+    $role = $_POST['addRole'];
+  }
+
   $tagValues = [];
 
   // $_POST['countTags'] contient le nombre d'input tag présent dans le formulaire. On boucle dessus pour vérifier le nombre de input tag séléctionnés et on les ajoute dans le tableau $tagValues.
